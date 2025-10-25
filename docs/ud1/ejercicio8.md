@@ -79,7 +79,3 @@ Respuesta final:
 $$\boxed{\operatorname{dist}(Q,\pi)=\dfrac{3}{\sqrt{14}}\approx0.8018.}$$
 
 Pequeña interpretación: la distancia es la longitud del segmento perpendicular al plano que une al punto con su proyección ortogonal sobre el plano.
-
----
-
-¿Quieres que añada una comprobación geométrica (proyección de $Q$ sobre el plano calculada explícitamente) o que incluya la derivación de la fórmula de la distancia breve? Estoy listo para ampliar la explicación o dejarla así, según prefieras.
