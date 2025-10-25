@@ -1,9 +1,0 @@
-mkdocs>=1.5
-mkdocs-material>=9.0
-pymdown-extensions>=9.0
-watchdog>=2.1
-mkdocs-macros-plugin>=0.7
-      - run: pip install mkdocs-macros-plugin
-      - run: pip install mkdocs-glightbox
-      - run: pip install pymdown-extensions
-      - run: pip install mkdocs-dracula-theme
