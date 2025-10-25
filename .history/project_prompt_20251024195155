@@ -1,0 +1,202 @@
+# Prompt maestro del proyecto — UAX Álgebra Lineal (1º Grado IA y Computación)
+
+Este documento define el "prompt principal" y las reglas que deben seguirse al escribir todos los artículos del proyecto. Sirve como guía para mantener coherencia, claridad y calidad didáctica en los contenidos.
+
+Objetivo
+
+- Público: estudiantes de 1º de Grado en Inteligencia Artificial y Computación (asignatura de Álgebra Lineal, UAX).
+- Uso: apuntes y material de estudio; colección homogénea de definiciones y ejercicios resueltos.
+
+Principios generales
+
+- Tono: cercano, informal-profesional, como un profesor que explica paso a paso. Usar primera persona plural ("vamos a...") cuando ayude a la claridad.
+- No dar nada por sabido: todo símbolo, fórmula o paso importante debe quedar definido o referenciado.
+- Fórmulas: usar sintaxis LaTeX (KaTeX/MathJax) con inline $...$ y bloque $$...$$. Debe renderizar con MkDocs (mkdocs-material+math support es suficiente y gratuito).
+- Notación por defecto:
+  - Vectores: negrita, p.ej. **v**
+  - Matrices: mayúsculas (A, B, ...)
+  - Escalares: minúsculas (a, b, λ)
+  - Índices: empezamos en 1 salvo que el contexto requiera 0-indexing (especificarlo)
+
+Formato visual y UX (nuevas reglas)
+
+- ✨ Emojis e íconos: usar emojis al principio de secciones o bloques para mejorar la memoria y el escaneo visual. Ejemplos: :bulb: ✨ ✅ ❗️ ➕ 🧭
+- 🧱 Aprovechar los recursos de MkDocs Material y extensiones (admonitions/blocks) para crear bloques de enfoque:
+  - Usar admonitions para notas, consejos y advertencias: por ejemplo `!!! tip "Consejo"` o `!!! warning "Cuidado"`. Estos se renderizan como bloques visuales que mejoran la UX.
+  - Para información importante usar `!!! important` o `!!! note` según convenga.
+  - Cuando el contenido de solución sea largo, usar bloques colapsables (`<details>` o admonitions con `open: false`) para no romper el flujo de lectura.
+- 🔠 Estructura y jerarquía: jugar con H2 y H3 para jerarquizar ideas. Reglas prácticas:
+  - H2 para secciones principales (p. ej. "Definición", "Ejemplo", "Solución").
+  - H3 para subpasos o listas de verificación dentro de una sección (p. ej. "Paso 1", "Paso 2").
+  - Evitar más de 3 niveles de título salvo que sea estrictamente necesario.
+- ↩️ Saltos de línea y fórmulas (LaTeX):
+
+  - Evitar poner texto y una fórmula en la misma línea cuando sea posible. Preferir dejar la fórmula en display en su propio párrafo:
+
+    Texto explicativo.
+
+    $$
+    \mathbf{u}\cdot\mathbf{v} = \sum_{i=1}^n u_i v_i
+    $$
+
+  - Para fórmulas cortas que deben ir inline, es aceptable `$a^2 + b^2 = c^2$`, pero cuando la fórmula forma parte del razonamiento, ponerla en bloque.
+
+  - Asegurate si las anotacion van en una sola linea usar el $ simple pero si usamos el $$ deben de ir en lineas separadas por ejemplo:
+
+  
+
+- **Negritas y énfasis**: usar **negrita** para resaltar lo realmente importante (definiciones, resultados finales, advertencias sobre errores comunes). No abusar; reserva la negrita para puntos clave.
+
+Ejemplos de uso combinado (admonition + emoji + títulos):
+
+!!! tip "✨ Buen consejo"
+Usa H2 (`##`) para la idea principal y H3 (`###`) para los pasos. Coloca la fórmula en su propio párrafo y **resalta** el resultado.
+
+### Ejemplo visual:
+
+## Definición
+
+Objetivo: entender X.
+
+$$
+	ext{Definición: }\; f(x) = x^2
+$$
+
+**Resultado clave:** f(2) = 4 ✅
+
+Estas reglas son compatibles con MkDocs Material (admonitions, code blocks, tablas, y extensiones de math). Si el tema del proyecto tiene configuraciones adicionales (p. ej. `pymdownx` o plugins), documentarlas en `mkdocs.yml`.
+
+Tipos de artículos
+
+1. Definiciones
+
+   - Objetivo: explicar un término/concepto con definición formal, intuición y ejemplos resueltos paso a paso.
+   - Estructura mínima:
+     - Front-matter (ver plantilla abajo)
+     - Título
+     - Objetivo del artículo (una frase: qué aprenderás)
+     - Definición formal (LaTeX si procede)
+     - Intuición / explicación en palabras sencillas
+     - Ejemplos mínimos (1–3) con desarrollo paso a paso y fórmulas marcadas
+     - Enlaces al temario relacionado
+     - Referencias y bibliografía (discreto al final)
+
+2. Ejercicios
+   - Objetivo: recuperar ejercicios vistos en clase, plantearlos y resolverlos paso a paso.
+   - Estructura mínima por artículo de ejercicios:
+     - Front-matter
+     - Tarea: enunciado claro y breve
+     - Lista de ejercicios a realizar (numerada)
+     - Soluciones: cada solución en un bloque colapsable (ver ejemplo). Cada paso debe indicar qué fórmula/regla se aplica.
+     - Comentario final: interpretación, errores comunes y variantes del ejercicio
+     - Enlaces a conceptos del temario usados en la solución
+
+Metadatos (front-matter YAML)
+
+- Campos recomendados (obligatorios):
+  - title: "Título del artículo"
+  - slug: "ud1-vec-definicion-nombre"
+  - date: YYYY-MM-DD
+  - authors: ["Nombre Profesor"]
+  - tags: ["definicion","ud1","vectores"]
+  - difficulty: "intro" | "intermedio" | "avanzado"
+  - type: "definicion" | "ejercicio"
+  - prerequisitos: ["ud1-introduccion-a-vectores"]
+
+## Plantilla mínima (ejemplo)
+
+title: "Nombre del término / Enunciado del ejercicio"
+slug: "ud1-..."
+date: "2025-10-24"
+authors: ["Profesor Nombre"]
+tags: ["ud1","vectores"]
+difficulty: "intro"
+type: "definicion"
+prerequisitos: ["ud1-introduccion-a-vectores"]
+
+---
+
+Contenido: (Aquí comienza el artículo, con secciones como "Objetivo", "Definición", "Ejemplo"...)
+
+Uso de fórmulas y referencias a las mismas
+
+- Cada fórmula importante insertarla con LaTeX y, si se usa en pasos posteriores, etiquetarla en texto con una referencia simple, p.ej. "(Fórmula 1)". No es necesario numerar con \\label en todos los casos; basta explicar claramente: "Aplicamos la fórmula de determinantes (Fórmula 1)" y luego poner la fórmula en display.
+
+Ejemplo de KaTeX en Markdown
+Inline: $\mathbf{v} = (v_1, v_2, \dots, v_n)$
+Bloque:
+
+$$
+	ext{Producto escalar: }\; \mathbf{u}\cdot\mathbf{v} = \sum_{i=1}^n u_i v_i
+$$
+
+Colapsible para soluciones
+
+- Usar la etiqueta HTML <details> para que MkDocs y navegadores la rendericen correctamente. Ejemplo:
+<details>
+<summary>Ver solución (clic)</summary>
+
+Contenido de la solución con fórmulas, pasos y explicación.
+
+</details>
+
+Enlazado al temario
+
+- Crearemos un `temario.md` o índice en `docs/` con slugs para cada tema (UD1..UD6). En los artículos, enlazar con enlaces relativos Markdown: [Vectores](../ud1/introduccion-a-vectores.md) o con el slug elegido.
+- Recomendación: usar nombres claros y estables para los archivos para evitar enlaces rotos.
+
+Carpeta y mkdocs
+
+- Organización recomendada (base `docs/` usada por MkDocs):
+  - docs/ud1/ (definiciones y ejercicios de UD1)
+  - docs/ud2/
+  - docs/ejercicios/ (si prefieres separar)
+  - docs/temario.md
+- Añadir los archivos al `mkdocs.yml` en el orden de la asignatura.
+
+Imágenes y diagramas
+
+- Permitidos: SVG preferible para diagramas; PNG/JPG para fotos. Guardar en `docs/assets/img/`.
+- Para diagramas generados por código, incluir el script o referencia en `examples/` si procede.
+
+Accesibilidad y estilo
+
+- Frases cortas, listas cuando convenga, y código/fórmulas en monoespacio cuando se muestre un fragmento de cálculo (no sustituir pasos por imágenes de texto).
+
+Revisión y checklist mínima antes de publicar
+
+- ¿El artículo tiene front-matter completo?
+- ¿Se usan símbolos conforme a la notación acordada?
+- ¿Todas las fórmulas importantes están explicadas o referenciadas?
+- ¿Se enlazan los prerequisitos del temario donde corresponde?
+- Ortografía y claridad: leer en voz alta una vez.
+
+## Ejemplo corto — Definición: Producto escalar
+
+title: "Producto escalar"
+slug: "ud1-producto-escalar"
+date: "2025-10-24"
+authors: ["Profesor Ejemplo"]
+tags: ["ud1","vectores","definicion"]
+difficulty: "intro"
+type: "definicion"
+prerequisitos: []
+
+---
+
+Objetivo: Entender la definición, propiedades básicas y ver un ejemplo calculado paso a paso.
+
+Definición (formal): El producto escalar de $\mathbf{u},\mathbf{v}\in\mathbb{R}^n$ se define como
+$$\mathbf{u}\cdot\mathbf{v} = \sum_{i=1}^n u_i v_i.\tag{Fórmula 1}$$
+
+Intuición: Es una medida de la "proyección" y relaciona ángulo y longitud: $\mathbf{u}\cdot\mathbf{v} = \|\mathbf{u}\|\,\|\mathbf{v}\|\cos\theta$.
+
+Ejemplo:
+Sea $\mathbf{u}=(1,2,3)$ y $\mathbf{v}=(4,-1,0)$. Aplicamos (Fórmula 1):
+$$\mathbf{u}\cdot\mathbf{v} = 1\cdot4 + 2\cdot(-1) + 3\cdot0 = 4 -2 + 0 = 2.$$
+
+Enlaces relacionados: [UD1 — Introducción a vectores](docs/ud1/introduccion-a-vectores.md)
+
+---
+
+Revisar siempre si hay que actualizar el mkdocs, para tener congruencia con el proyecto.

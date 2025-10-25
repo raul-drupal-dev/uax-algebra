@@ -1,0 +1,101 @@
+site_name: Curso Completo de LangGraph
+site_url: https://raul-drupal-dev.github.io/uax/
+extra_css:
+  - ./assets/stylesheets/extra.css
+theme:
+  name: material
+  logo: ./assets/img/theme/raul.png
+  favicon: ./assets/img/theme/raul.png
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.follow
+    - content.tabs.link
+    - search.share
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+markdown_extensions:
+  - pymdownx.details
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+
+copyright: Copyright &copy; 2025 Creado por Raul Jimenez Morales.
+
+nav:
+  - "Introducción":
+      - "🙋‍♂️ Bienvenida": index.md
+      - "📚 Curso 1: Fundamentos de LangGraph": curso1/index.md
+      - "⚙️ Curso 2: Aplicaciones Avanzadas": curso2/index.md
+      - "🚀 Curso 3: Despliegue y Proyecto Final": curso3/index.md
+      - "🛠️ Curso 4: Cápsulas Extras": curso4/index.md
+  - "📚 Curso 1: Fundamentos de LangGraph":
+      - "Introducción": curso1/index.md
+      - "Tema 0: Qué es Langgraph?": curso1/tema0_que_es_langgraph.md
+      - "Tema 1: Nodos": curso1/tema1_nodos.md
+      - "Tema 2: Edges (Conexiones)": curso1/tema2_edges.md
+      - "Tema 3: State Schema": curso1/tema3_state_schema.md
+      - "Tema 4: Memoria": curso1/tema4_memory.md
+      - "Tema 5: Chains y Flujos de Trabajo": curso1/tema5_chains.md
+      - "Tema 6: Routers": curso1/tema6_routers.md
+      - "Tema 7: Reducers": curso1/tema7_reducers.md
+      - "Tema 8: Tools": curso1/tema8_tools.md
+      - "Tema 9: Trim y Filtrado de Mensajes": curso1/tema9_trim_filter.md
+  - "⚙️ Curso 2: Aplicaciones Avanzadas":
+      - "Introducción": curso2/index.md
+      - "Tema 1: Chatbot Summarizing": curso2/tema1_summarizing.md
+      - "Tema 2: Streaming": curso2/tema2_streaming.md
+      - "tema 3: Breakpoint": curso2/tema3_breakpoint.md
+      - "Tema 4: Human in the Loop": curso2/tema4_human_loop.md
+      - "Tema 5: Paralelismo": curso2/tema5_parallelism.md
+      - "Tema 6: Subgrafías (Sub-graphs)": curso2/tema6_sub_graphs.md
+      - "Tema 7: Mapas": curso2/tema7_maps.md
+      - "Tema 8: LangGraph Studio": curso2/tema8_langgraph_studio.md
+      - "Tema 9: LangSmith": curso2/tema9_langsmith.md
+  - "🚀 Curso 3: Despliegue y Proyecto Final":
+      - "Introducción": curso3/index.md
+      - "Tema 1: Long-Term Memory": curso3/tema1_long_term_memory.md
+      - "Tema 2: Memory Schema": curso3/tema2_memory_schema.md
+      - "Tema 3: LangGraph Store": curso3/tema3_langgraph_store.md
+      - "Tema 4: LangGraph CLI": curso3/tema4_langgraph_cli.md
+      - "Tema 5: LangGraph SDK": curso3/tema5_langgraph_sdk.md
+      - "Tema 6: Doble-texting": curso3/tema6_doble-texting.md
+      - "Tema 7: API REST/GraphQL": curso3/tema7_api_rest.md
+      - "Tema 8: LangFlow": curso3/tema8_langflow.md
+  - "🛠️ Curso 4: Cápsulas Extras":
+      - "Introducción": curso4/index.md
+      - "Cápsula 1: Messages": curso4/capsula1_messages.md
+      - "Cápsula 2: State In & State Out": curso4/capsula2_statein_stateout.md
+      - "Cápsula 3: Agent Chat UI": curso4/capsula3_agent_chat_ui.md
+      - "Cápsula 4: LangMem SDK": curso4/capsula4_langmem_sdk.md
+      - "Cápsula 5: Computer Use Agents": curso4/capsula5_computer_use_agents.md
+  #- "📄 Recursos Adicionales":
+  #- "Diapositivas": assets/slides.md
+  #- "Referencias": assets/referencias.md

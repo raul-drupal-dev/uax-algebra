@@ -1,0 +1,7 @@
+mkdocs>=1.5
+mkdocs-material>=9.0
+pymdown-extensions>=9.0
+watchdog>=2.1
+mkdocs-macros-plugin>=0.7
+mkdocs-glightbox>=0.13
+mkdocs-dracula-theme>=0.5

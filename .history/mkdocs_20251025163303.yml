@@ -1,0 +1,70 @@
+site_name: Guia de aprendizaje de algebra UAX
+site_description: Una guía completa para aprender álgebra en la Universidad Alfonso X el Sabio, cubriendo desde conceptos básicos hasta temas avanzados.
+site_url: https://raul-drupal-dev.github.io/uax_algebra/
+extra_css:
+  - ./assets/stylesheets/extra.css
+theme:
+  name: material
+  logo: ./assets/img/theme/raul.png
+  favicon: ./assets/img/theme/raul.png
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.follow
+    - content.tabs.link
+    - search.share
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+markdown_extensions:
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+
+extra_javascript:
+  # MathJax v3 para renderizar LaTeX ($...$, $$...$$) en el sitio generado.
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: Copyright &copy; 2025 Creado por Raul Jimenez Morales.
+
+nav:
+  - "Introducción":
+      - "🙋‍♂️ Bienvenida": index.md
+  - "Unidad 1: Introduccion a Vectores":
+      - "📚 Conceptos Básicos": ud1/temario.md
+      - "📝 Ejercicios Prácticos": "ud1/ejercicios.md"
+      - "🧮 Solución Ejercicio 1": ud1/ejercicio1.md
+      - "🧮 Solución Ejercicio 2": ud1/ejercicio2.md
+      - "🧮 Solución Ejercicio 3": ud1/ejercicio3.md
+      - "🧮 Solución Ejercicio 4": ud1/ejercicio4.md
+      - "🧮 Solución Ejercicio 5": ud1/ejercicio5.md
+      -

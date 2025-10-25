@@ -1,0 +1,6 @@
+mkdocs
+mkdocs-material
+pymdown-extensions
+watchdog
+mkdocs-macros-plugin
+mkdocs-glightbox

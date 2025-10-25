@@ -1,0 +1,11 @@
+services:
+  mkdocs:
+    build: .
+    image: uax-algebra:latest
+    volumes:
+      - ./:/docs
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    tty: true

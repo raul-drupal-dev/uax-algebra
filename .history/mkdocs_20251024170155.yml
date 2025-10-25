@@ -1,0 +1,56 @@
+site_name: Guia de aprendizaje de algebra UAX
+site_description: Una guía completa para aprender álgebra en la Universidad Alfonso X el Sabio, cubriendo desde conceptos básicos hasta temas avanzados.
+site_url: https://raul-drupal-dev.github.io/uax_algebra/
+extra_css:
+  - ./assets/stylesheets/extra.css
+theme:
+  name: material
+  logo: ./assets/img/theme/raul.png
+  favicon: ./assets/img/theme/raul.png
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.follow
+    - content.tabs.link
+    - search.share
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+markdown_extensions:
+  - pymdownx.details
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+
+copyright: Copyright &copy; 2025 Creado por Raul Jimenez Morales.
+
+nav:
+  - "Introducción":
+  
+     

@@ -1,0 +1,20 @@
+FROM python:3.11-slim
+
+WORKDIR /docs
+
+# Evitar buffers para logs
+ENV PYTHONUNBUFFERED=1
+
+# Copiamos requirements y las instalamos
+COPY requirements.txt /docs/requirements.txt
+RUN pip install --no-cache-dir -r /docs/requirements.txt
+
+# Exponer puerto para mkdocs
+EXPOSE 8000
+
+# Comando por defecto: usar watchmedo (watchdog) para reiniciar mkdocs al detectar cambios.
+# watchmedo auto-restart --recursive --pattern="*.md;*.html;*.yml;*.css;*.js" -- mkdocs serve -a 0.0.0.0:8000
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
