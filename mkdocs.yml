@@ -59,6 +59,7 @@ copyright: Copyright &copy; 2025 Creado por Raul Jimenez Morales.
 nav:
   - "Introducción":
       - "🙋‍♂️ Bienvenida": index.md
+      - "UD1: Introducción a Vectores": ud1/temario.md
   - "Unidad 1: Introduccion a Vectores":
       - "📚 Conceptos Básicos": ud1/temario.md
       - "📝 Ejercicios Prácticos": "ud1/ejercicios.md"
@@ -70,4 +71,4 @@ nav:
       - "🧮 Solución Ejercicio 6": ud1/ejercicio6.md
       - "🧮 Solución Ejercicio 7": ud1/ejercicio7.md
       - "🧮 Solución Ejercicio 8": ud1/ejercicio8.md
-      
+
