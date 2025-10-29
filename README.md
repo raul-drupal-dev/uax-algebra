@@ -4,6 +4,16 @@ Proyecto de materiales para la asignatura de Álgebra (curso impartido en la Uni
 
 Este repositorio contiene la documentación y ejercicios formativos (implementados con MkDocs + Material) usados en el curso. Está preparado para trabajarse localmente con Docker (flujo recomendado) o instalando las dependencias de Python.
 
+## Sitio web
+
+Explora la versión publicada del curso 📚🌐
+
+Aquí se aloja la documentación, apuntes y ejercicios del asignatura, generados con MkDocs + Material. Visita el sitio para ver la versión estática y los contenidos actualizados.
+
+Sitio público: https://raul-drupal-dev.github.io/uax-algebra/
+
+Consejo: para desarrollo local usa Docker (make serve-docker-run) o mkdocs serve si prefieres no usar contenedores.
+
 ## Objetivo
 
 Proveer un sitio de documentación y un conjunto de ejercicios que faciliten el aprendizaje del Álgebra Lineal impartido en UAX. El propósito es disponer de:
