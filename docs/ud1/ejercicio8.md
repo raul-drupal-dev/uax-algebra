@@ -50,9 +50,10 @@ $$\boxed{P(3,0,0)\;\text{pertenece al plano }\pi.}$$
 
 Fórmula (recordar): la distancia de un punto $Q=(x_0,y_0,z_0)$ al plano $ax+by+cz=d$ es
 
-$$
-\operatorname{dist}(Q,\pi) = \frac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2+b^2+c^2}}.
-$$
+???+ example Formula
+    $$
+    \operatorname{dist}(Q,\pi) = \frac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2+b^2+c^2}}.
+    $$
 
 Aplicamos con $a=2,b=-1,c=3,d=6$ y $Q=(1,2,1)$:
 
@@ -79,3 +80,11 @@ Respuesta final:
 $$\boxed{\operatorname{dist}(Q,\pi)=\dfrac{3}{\sqrt{14}}\approx0.8018.}$$
 
 Pequeña interpretación: la distancia es la longitud del segmento perpendicular al plano que une al punto con su proyección ortogonal sobre el plano.
+
+## Resumen (ficha rápida)
+
+|         Apartado |              Resultado              | Forma utilizada                                               |
+| ---------------: | :---------------------------------: | :------------------------------------------------------------ | 
+|    Vector normal |             $(2,-1,3)$              | Coeficientes $(a,b,c)$ extraídos de la ecuación $ax+by+cz=d$. |
+|     P pertenece? |   $P(3,0,0)$ pertenece a $\,\pi$    | Sustituir $P$ en $2x-y+3z$ y comprobar igualdad con $6$.      |
+| Distancia de $Q$ | $\dfrac{3}{\sqrt{14}}\approx0.8018$ | Fórmula: $\operatorname{dist}(Q,\pi)=\dfrac{ \|ax_0+by_0+cz_0-d\|}{\sqrt{a^2+b^2+c^2}}$. |
