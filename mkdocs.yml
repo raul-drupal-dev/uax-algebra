@@ -60,6 +60,15 @@ nav:
   - "Introducción":
       - "🙋‍♂️ Bienvenida": index.md
       - "UD1: Introducción a Vectores": ud1/temario.md
+      - "UD2: Espacios Vectoriales": ud2/temario.md
+  - "Temario (Global)":
+      - "📘 Temario del curso": temario/index.md
+      - "Fundamentos (términos y operaciones)": temario/fundamentos.md
+      - "Espacios vectoriales y bases": temario/espacios-vectoriales-y-bases.md
+      - "Coordenadas y cambio de base": temario/coordenadas-cambio-de-base.md
+      - "Subespacios (param./cart.)": temario/subespacios-ecuaciones.md
+      - "Espacio cociente": temario/espacio-cociente.md
+      - "Problemas integradores y adicionales": temario/integradores.md
   - "Unidad 1: Introduccion a Vectores":
       - "📚 Conceptos Básicos": ud1/temario.md
       - "📝 Ejercicios Prácticos": "ud1/ejercicios.md"
@@ -73,3 +82,12 @@ nav:
       - "🧮 Solución Ejercicio 8": ud1/ejercicio8.md
       - "🧮 Solución Ejercicio 9": ud1/ejercicio9.md
       - "🧮 Solución Ejercicio 10": ud1/ejercicio10.md
+  - "Unidad 2: Espacios vectoriales":
+      - "📚 Conceptos Básicos": ud2/temario.md
+      - "📝 Ejercicios Prácticos": "ud2/ejercicios.md"
+      - "🧮 Solución Ejercicio 1": ud2/ejercicio1.md
+      - "🧮 Solución Ejercicio 2": ud2/ejercicio2.md
+      - "🧮 Solución Ejercicio 3": ud2/ejercicio3.md
+      - "🧮 Solución Ejercicio 4": ud2/ejercicio4.md
+      - "🧮 Solución Ejercicio 5": ud2/ejercicio5.md
+      - "🧮 Solución Ejercicio 6": ud2/ejercicio6.md
