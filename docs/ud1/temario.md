@@ -220,3 +220,26 @@ El **módulo (o magnitud)** del vector resultante es igual al área del paralelo
 
 ???+ Nota
 La dependencia lineal entre características indica redundancia (multicolinealidad) y puede provocar inestabilidad numérica y coeficientes poco interpretables en modelos lineales. En la práctica se detecta con SVD/valores singulares o la matriz de correlación; respuestas habituales son reducción de dimensión (PCA/SVD), regularización (Ridge/Lasso) o eliminación/combinar características redundantes.
+
+
+---
+
+Khan Academy – Matemáticas: explicaciones y ejercicios interactivos de álgebra, funciones, trigonometría, etc.
+https://es.khanacademy.org/math
+
+Proyecto Descartes: materiales interactivos de Matemáticas I y II de Bachillerato.
+https://proyectodescartes.org/
+
+Canales de YouTube:
+Unicoos (David Calle) – Álgebra, funciones, matrices.
+https://www.unicoos.com/asignatura/matematicas
+
+ Matemáticas profesor10 – Ejercicios explicados paso a paso.
+https://www.youtube.com/profesor10demates
+
+Plan orientativo de repaso (4 semanas):
+
+Semana 1: Aritmética y álgebra básica (potencias, fracciones algebraicas, factorización).
+Semana 2: Ecuaciones e inecuaciones lineales y cuadráticas.
+Semana 3: Funciones y gráficas.
+Semana 4: Matrices, determinantes y sistemas lineales.
