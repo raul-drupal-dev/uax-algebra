@@ -61,6 +61,8 @@ nav:
       - "🙋‍♂️ Bienvenida": index.md
       - "UD1: Introducción a Vectores": ud1/temario.md
       - "UD2: Espacios Vectoriales": ud2/temario.md
+      - "UD3: Aplicaciones Lineales": ud3/index.md
+      - "Examenes y soluciones": examenes/ejercicios-clase.md
   - "Temario (Global)":
       - "📘 Temario del curso": temario/index.md
       - "Fundamentos (términos y operaciones)": temario/fundamentos.md
@@ -91,3 +93,15 @@ nav:
       - "🧮 Solución Ejercicio 4": ud2/ejercicio4.md
       - "🧮 Solución Ejercicio 5": ud2/ejercicio5.md
       - "🧮 Solución Ejercicio 6": ud2/ejercicio6.md
+  - "Unidad 3: Aplicaciones Lineales":
+      - "📚 Índice UD3": ud3/index.md
+      - "Aplicaciones Lineales": ud3/aplicaciones-lineales.md
+      - "Núcleo e Imagen": ud3/nucleo-imagen.md
+      - "Inyectiva / Sobreyectiva / Isomorfismos": ud3/inyectiva-sobreyectiva-isomorfismos.md
+      - "Matriz asociada a una aplicación": ud3/matriz-asociada.md
+      - "Espacio dual y base dual": ud3/espacio-dual-base-dual.md
+      - "Anulador de un subespacio": ud3/anulador.md
+      - "Interpolación de Lagrange": ud3/interpolacion-lagrange.md
+      - "Resumen de la UD3": ud3/resumen.md
+  - "Exámenes y soluciones":
+      - "📝 Ejercicios de clase": examenes/ejercicios-clase.md

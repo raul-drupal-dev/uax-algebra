@@ -101,6 +101,51 @@ Pequeña guía práctica y ordenada para decidir si un conjunto de vectores es l
 
 Consejo: Empieza por los trucos rápidos; si no son concluyentes, usa determinante (si aplica) o la eliminación por filas, que siempre funciona.
 
+??? tip "Vectores en columnas o en filas"
+    
+    ***Caso 1: Vectores como Columnas (Analizar L.I. o L.D.)***
+
+    **Objetivo**: Determinar si los vectores son linealmente independientes o dependientes, es decir, resolver \(c_{1}v_{1}+c_{2}v_{2}+\dots +c_{n}v_{n}=\vec{0}\).
+
+    **Lógica**:  
+    Cuando escribes la ecuación \(c_{1}v_{1}+\dots +c_{n}v_{n}=\vec{0}\), si pones los vectores \(v_{i}\) como las columnas de una matriz \(A\), la ecuación se convierte en el sistema matricial
+    \(A\mathbf{c}=\vec{0}\),
+    donde \(\mathbf{c}\) es el vector de coeficientes \((c_{1},\dots ,c_{n})^{T}\).
+
+    Al aplicar Gauss-Jordan a esta matriz, estás resolviendo directamente el sistema para encontrar los valores de \(c_{1},c_{2},\dots \).  
+    Si la única solución es \(c_{i}=0\), son L.I.Si hay soluciones no triviales, son L.D.
+
+    **Uso**: Este enfoque es ideal cuando solo quieres saber si el conjunto completo es L.I. o L.D. y quieres encontrar los valores exactos de los coeficientes \(c_{i}\).
+
+    ---
+
+    ***Caso 2: Vectores como Filas (Encontrar una Base y Dimensión del Subespacio Generado)***
+
+    **Objetivo**: Encontrar una base para el espacio generado por los vectores y determinar la dimensión. Esto implica eliminar los vectores redundantes.
+
+    **Lógica**:  
+    Las operaciones elementales de fila (intercambiar filas, multiplicar una fila por un escalar, sumar múltiplos de una fila a otra) NO cambian el espacio generado por las filas.
+
+    Cuando pones los vectores como filas y aplicas Gauss-Jordan, el proceso de escalonamiento:
+
+    - Transforma el conjunto original de vectores en un nuevo conjunto (las filas de la matriz escalonada).
+    - Elimina las dependencias, convirtiendo los vectores dependientes en filas de ceros.
+    - Las filas no nulas restantes son, por definición, linealmente independientes y generan el mismo espacio que las originales. Por tanto, forman una base.
+
+    **Uso**: Este enfoque es ideal cuando necesitas extraer una base del conjunto original o encontrar la dimensión del subespacio.
+
+    ---
+
+    **Resumen: ¿Cuándo usar cuál?**
+    
+    - ¿Es el conjunto L.I. o L.D.? 
+        Vectores como Columnas — Gauss-Jordan — ¿Hay variables libres \(c_{i}\)?
+
+    - Encontrar una Base y Dimensión.  
+        Vectores como Filas — Eliminación Gaussiana — Filas no nulas restantes (Rango).
+
+    No te líes, ambos métodos son válidos. El método de las filas es generalmente más rápido para encontrar una base porque las filas no nulas del resultado ya son la base.
+
 ### 5. Bases y dimensión
 
 Una base de $V$ es un conjunto $B$ que es simultáneamente L.I. y generador de $V$; es decir, cada vector de $V$ se escribe de manera única como combinación lineal de los elementos de $B$. La dimensión $\dim(V)$ es el número (finito) de vectores en cualquier base de $V$.
