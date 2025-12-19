@@ -103,5 +103,15 @@ nav:
       - "Anulador de un subespacio": ud3/anulador.md
       - "Interpolación de Lagrange": ud3/interpolacion-lagrange.md
       - "Resumen de la UD3": ud3/resumen.md
+  - "Unidad 4: Diagonalización":
+      - "📚 Índice UD4": ud4/index.md
+      - "Definiciones y conceptos básicos": ud4/definiciones.md
+      - "Criterios y comprobaciones": ud4/criterios-diagonalizacion.md
+      - "Algoritmo paso a paso 2x2": ud4/diagonalizacion-paso-a-paso.md
+      - "Algoritmo paso a paso (3x3) — Ejemplo": ud4/diagonalizacion-paso-a-paso-3x3.md
+      - "Forma canónica de Jordan": ud4/forma-jordan.md
+      - "Ejercicios resueltos": ud4/ejercicios-resueltos.md
+      - "Ejercicios propuestos": ud4/ejercicios-propuestos.md
+      - "Resumen de la UD4": ud4/resumen.md
   - "Exámenes y soluciones":
       - "📝 Ejercicios de clase": examenes/ejercicios-clase.md
