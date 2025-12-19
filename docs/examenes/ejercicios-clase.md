@@ -2,8 +2,6 @@
 
  _Las soluciones largas están colapsadas por defecto para mejorar la lectura; pulsa en "Solución paso a paso" cuando quieras desplegarlas._
 
-¡Excelente estrategia de estudio! Si el examen se basa en los ejemplos y ejercicios resueltos, dominar la metodología paso a paso es la clave. A continuación, se presenta un resumen completo de todos los ejercicios y ejemplos resueltos en el material de estudio, agrupados por unidad didáctica y tema, incluyendo la explicación teórica y los pasos de solución.
-
 ## UNIDAD DE INDUCCIÓN: INTRODUCCIÓN A VECTORES
 
 ### Tema: Operaciones Básicas y Propiedades
