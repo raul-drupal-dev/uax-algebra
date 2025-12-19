@@ -644,15 +644,23 @@ Diagonalice $A = \begin{pmatrix} 3 & 1 & 1 \\ 1 & 3 & 1 \\ 1 & 1 & 3 \end{pmatri
     $$p(x) = -x^3 + 9x^2 - 24x + 20 = -(x-2)^2(x-5)$$
 
     2.  **Autovalores y Multiplicidades Algebraicas ($a$):**
-    *   $\lambda_1 = 2$, $a_1 = 2$.
-    *   $\lambda_2 = 5$, $a_2 = 1$.
+        *   $\lambda_1 = 2$, $a_1 = 2$.
+        *   $\lambda_2 = 5$, $a_2 = 1$.
     3.  **Multiplicidades Geométricas ($d$):**
-    *   Para $\lambda_1 = 2$: $A - 2I = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}$. $\text{rg}(A - 2I) = 1$. $d_1 = 3 - 1 = 2$. ($d_1 = a_1$).
-    *   Para $\lambda_2 = 5$: $A - 5I = \begin{pmatrix} -2 & 1 & 1 \\ 1 & -2 & 1 \\ 1 & 1 & -2 \end{pmatrix}$. $\text{rg}(A - 5I) = 2$. $d_2 = 3 - 2 = 1$. ($d_2 = a_2$).
+        *   Para $\lambda_1 = 2$: $A - 2I = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}$.  
+            $\text{rg}(A - 2I) = 1$.  
+            $d_1 = 3 - 1 = 2$.  
+            ($d_1 = a_1$).  
+        *   Para $\lambda_2 = 5$: $A - 5I = \begin{pmatrix} -2 & 1 & 1 \\ 1 & -2 & 1 \\ 1 & 1 & -2 \end{pmatrix}$.  
+            $\text{rg}(A - 5I) = 2$.  
+            $d_2 = 3 - 2 = 1$.  
+            ($d_2 = a_2$).
     4.  **Matriz Diagonal D:** $D = \begin{pmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 5 \end{pmatrix}$.
     5.  **Bases de Subespacios Propios ($V_\lambda$):**
-    *   $V_2$: Se resuelve $x+y+z=0$. $\text{Base}(V_2) = \{(-1, 1, 0), (-1, 0, 1)\}$,.
-    *   $V_5$: Se resuelve $x=y=z$. $\text{Base}(V_5) = \{(1, 1, 1)\}$.
+        *   $V_2$: Se resuelve $x+y+z=0$.  
+            $\text{Base}(V_2) = \{(-1, 1, 0), (-1, 0, 1)\}$,.
+        *   $V_5$: Se resuelve $x=y=z$.  
+            $\text{Base}(V_5) = \{(1, 1, 1)\}$.
     6.  **Matriz de Paso P:** Se ordenan los vectores según el orden en $D$:
 
     $$P = \begin{pmatrix} -1 & -1 & 1 \\ 1 & 0 & 1 \\ 0 & -1 & 1 \end{pmatrix}$$
@@ -698,8 +706,10 @@ $A = \begin{pmatrix} 3 & 1 & -1 & -1 \\ 0 & 2 & 0 & 1 \\ 1 & 1 & 1 & 0 \\ 0 & 0 
 
 ???+ details "Solución paso a paso"
     1.  **Dimensiones de Subespacios Generalizados:**
-    *   $A - 2I = \begin{pmatrix} 1 & 1 & -1 & -1 \\ 0 & 0 & 0 & 1 \\ 1 & 1 & -1 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}$. $\text{rg}(A - 2I) = 2$. $\dim(E_1(2)) = 4 - 2 = 2$.
-    *   $(A - 2I)^2 = \begin{pmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}$. $\text{rg}((A - 2I)^2) = 0$. $\dim(E_2(2)) = 4 - 0 = 4$.
+    *   $A - 2I = \begin{pmatrix} 1 & 1 & -1 & -1 \\ 0 & 0 & 0 & 1 \\ 1 & 1 & -1 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}$.  
+        $\text{rg}(A - 2I) = 2$. $\dim(E_1(2)) = 4 - 2 = 2$.
+    *   $(A - 2I)^2 = \begin{pmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{pmatrix}$.  
+        $\text{rg}((A - 2I)^2) = 0$. $\dim(E_2(2)) = 4 - 0 = 4$.
     *   La cadena se estabiliza en $E_2(2) = \mathbb{R}^4$.
     2.  **Diagrama de Jordan:** $\dim(E_2) - \dim(E_1) = 4 - 2 = 2$ vectores en el nivel 2. $\dim(E_1) - \dim(E_0) = 2$ vectores en el nivel 1. Hay 2 líneas de longitud 2,.
     3.  **Forma Canónica de Jordan $J$:** El diagrama produce dos bloques de Jordan de orden 2.
