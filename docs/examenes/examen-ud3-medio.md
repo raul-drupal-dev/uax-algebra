@@ -151,6 +151,45 @@ Explicación breve: Es multiplicación por 2 (matriz $2I$), invertible; núcleo 
 
 ---
 
+<quiz>
+¿Cuál es la definición correcta de la base dual $B^*$ asociada a una base $B=\{v_1,\dots,v_n\}$ de un espacio vectorial $V$?
+
+- [ ] El conjunto de vectores de $V$ que son ortogonales a todos los $v_i$.
+- [x] El conjunto de funcionales lineales $\{\varphi_1,\dots,\varphi_n\}\subset V^*$ tales que $\varphi_i(v_j)=\delta_{ij}$.
+- [ ] El conjunto de transformaciones lineales de $V$ en $V$ que diagonalizan la matriz de la base.
+- [ ] La inversa de la matriz de cambio de base entre dos bases cualesquiera.
+
+Explicación breve: La base dual está formada por los funcionales que evalúan a 1 en el vector correspondiente y a 0 en los demás.
+</quiz>
+
+---
+
+<quiz>
+Sea $B=\{(1,0),(1,1)\}$ base de $\mathbb{R}^2$. ¿Cuál(es) función(es) lineal(es) forman la base dual $B^*$ (es decir, qué funcionales $\varphi_1,\varphi_2\in(\mathbb{R}^2)^*$ cumplen $\varphi_i(v_j)=\delta_{ij}$)?
+
+- [ ] $\varphi_1(x,y)=x,\quad \varphi_2(x,y)=y$
+- [x] $\varphi_1(x,y)=x-y,\quad \varphi_2(x,y)=y$
+- [ ] $\varphi_1(x,y)=x+y,\quad \varphi_2(x,y)=x-y$
+- [ ] $\varphi_1(x,y)=2x-y,\quad \varphi_2(x,y)=x+y$
+
+Explicación breve: Resolver $\varphi_1(1,0)=1,\;\varphi_1(1,1)=0$ da $\varphi_1(x,y)=x-y$. Para $\varphi_2$ se obtiene $\varphi_2(x,y)=y$.
+</quiz>
+
+---
+
+<quiz>
+Sea $S=\langle(1,1,0)\rangle\subset\mathbb{R}^3$. ¿Cuál(es) afirmación(es) describen correctamente el anulador $S^0\subset(\mathbb{R}^3)^*$?
+
+- [ ] $S^0$ es el conjunto de vectores de $\mathbb{R}^3$ ortogonales a $(1,1,0)$.
+- [x] $S^0=\{\varphi\in(\mathbb{R}^3)^*:\;\varphi(1,1,0)=0\}$ (los funcionales que se anulan en $(1,1,0)$).
+- [x] En coordenadas, $S^0$ está generado por las formas $\{x-y,\;z\}$ (tiene dimensión 2).
+- [ ] $S^0$ tiene dimensión 1 porque $S$ es de dimensión 1.
+
+Explicación breve: Un funcional $\varphi(x,y,z)=ax+by+cz$ anula a $(1,1,0)$ si $a+b=0$, por tanto $b=-a$ y $c$ libre.
+</quiz>
+
+---
+
 <!-- mkdocs-quiz intro -->
 
 <!-- mkdocs-quiz results -->
@@ -230,3 +269,42 @@ Explicación breve: Es multiplicación por 2 (matriz $2I$), invertible; núcleo 
     $$\det(2I)=2^2=4\neq 0,$$
 
     por tanto es invertible (isomorfismo), con núcleo trivial.
+
+???- details "Solución pregunta 11 — Base dual (definición)"
+    Sea $B=\{v_1,\dots,v_n\}$ una base de $V$. La base dual $B^*=\{\varphi_1,\dots,\varphi_n\}\subset V^*$ está definida por
+
+    $$\varphi_i(v_j)=\delta_{ij},\quad 1\le i,j\le n.$$
+
+    Es decir, cada funcional lineal $\varphi_i$ toma valor $1$ en $v_i$ y $0$ en los demás vectores de la base.
+
+???- details "Solución pregunta 12 — Base dual (ejemplo)"
+    Para $B=\{(1,0),(1,1)\}$ buscamos funcionales $\varphi(x,y)=ax+by$ que cumplan
+
+    $$\varphi_1(1,0)=1,\quad \varphi_1(1,1)=0;$$
+    de donde $a=1$ y $a+b=0\Rightarrow b=-1$. Luego
+
+    $$\varphi_1(x,y)=x-y.$$
+
+    Para $\varphi_2$:
+
+    $$\varphi_2(1,0)=0,\quad \varphi_2(1,1)=1;$$
+    esto da $c=0$ y $c+d=1\Rightarrow d=1$, es decir
+
+    $$\varphi_2(x,y)=y.$$
+
+    Por tanto $B^*=\{x-y,\;y\}$.
+
+???- details "Solución pregunta 13 — Anulador"
+    Si $S=\langle(1,1,0)\rangle\subset\mathbb{R}^3$, el anulador
+
+    $$S^0=\{\varphi\in(\mathbb{R}^3)^*:\;\varphi(1,1,0)=0\}$$
+
+    puede describirse en coordenadas: tomando $\varphi(x,y,z)=ax+by+cz$, la condición
+
+    $$\varphi(1,1,0)=a+b=0$$
+
+    implica $b=-a$ y $c$ libre. Entonces
+
+    $$\varphi(x,y,z)=a(x-y)+c z,$$
+
+    y una base para $S^0$ es por ejemplo $\{x-y,\;z\}$ (dimensión 2).
