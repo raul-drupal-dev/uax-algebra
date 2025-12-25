@@ -144,9 +144,11 @@ Resolver $Ax=0$ da solo la solución trivial $x=0$, así que
 - $\ker(A)=\{0\}$.
 
 La imagen es todo $\mathbb{R}^3$; una base natural de $\operatorname{Im}(A)$ son las columnas de $A$:
+
 $$\operatorname{Im}(A)=\langle(1,0,2)^T,\,(2,1,5)^T,\,(3,1,8)^T\rangle=\mathbb{R}^3.$$
 
 Comprobación del teorema de la dimensión:
+
 $$\dim\mathbb{R}^3=3=\dim\ker(A)+\dim\operatorname{Im}(A)=0+3.$$
 
 ---

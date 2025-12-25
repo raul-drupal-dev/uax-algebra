@@ -4,6 +4,7 @@ site_url: https://raul-drupal-dev.github.io/uax_algebra/
 extra_css:
   - ./assets/stylesheets/extra.css
 theme:
+  language: es
   name: material
   logo: ./assets/img/theme/raul.png
   favicon: ./assets/img/theme/raul.png
@@ -33,6 +34,24 @@ theme:
     - content.code.copy
     - content.code.select
     - content.code.annotate
+plugins:
+  - search
+  - mkdocs_quiz:
+      shuffle_questions: true
+      shuffle_answers: true
+      show_results: true
+      per_question_feedback: true
+      quiz_prefix: "Quiz: "
+      results_prefix: "Resultados"
+      question_prefix: "Pregunta "
+      correct_prefix: "Correcto"
+      incorrect_prefix: "Incorrecto"
+      score_prefix: "Puntuación"
+      max_score_prefix: "Puntuación máxima"
+      feedback_correct: "¡Respuesta correcta!"
+      feedback_incorrect: "Respuesta incorrecta."
+      auto_submit: true
+      auto_number: true
 markdown_extensions:
   - pymdownx.details
   - pymdownx.arithmatex:
@@ -62,6 +81,8 @@ nav:
       - "UD1: Introducción a Vectores": ud1/temario.md
       - "UD2: Espacios Vectoriales": ud2/temario.md
       - "UD3: Aplicaciones Lineales": ud3/index.md
+      - "UD4: Diagonalización": ud4/index.md
+      - "UD5: Teoría de grafos": ud5/index.md
       - "Examenes y soluciones": examenes/ejercicios-clase.md
   - "Temario (Global)":
       - "📘 Temario del curso": temario/index.md
@@ -95,6 +116,8 @@ nav:
       - "🧮 Solución Ejercicio 6": ud2/ejercicio6.md
   - "Unidad 3: Aplicaciones Lineales":
       - "📚 Índice UD3": ud3/index.md
+      - "📝 Ejercicios Prácticos": ud3/ejercicios.md
+      - "🧪 Examen 1 (Quiz)": ud3/examen-quiz.md
       - "Aplicaciones Lineales": ud3/aplicaciones-lineales.md
       - "Núcleo e Imagen": ud3/nucleo-imagen.md
       - "Inyectiva / Sobreyectiva / Isomorfismos": ud3/inyectiva-sobreyectiva-isomorfismos.md
@@ -103,6 +126,7 @@ nav:
       - "Anulador de un subespacio": ud3/anulador.md
       - "Interpolación de Lagrange": ud3/interpolacion-lagrange.md
       - "Resumen de la UD3": ud3/resumen.md
+      - "🔎 Terminologías (tabla resumen)": ud3/terminologias.md
   - "Unidad 4: Diagonalización":
       - "📚 Índice UD4": ud4/index.md
       - "Definiciones y conceptos básicos": ud4/definiciones.md
@@ -113,5 +137,25 @@ nav:
       - "Ejercicios resueltos": ud4/ejercicios-resueltos.md
       - "Ejercicios propuestos": ud4/ejercicios-propuestos.md
       - "Resumen de la UD4": ud4/resumen.md
+      - "🧪 Examen (Quiz)": ud4/examen-quiz.md
+  - "Unidad 5: Teoría de grafos":
+      - "📚 Índice UD5": ud5/index.md
+      - "Definiciones y tipos de grafos": ud5/definiciones.md
+      - "Grados y matrices": ud5/grados-y-matrices.md
+      - "Subgrafos, complemento e isomorfismo": ud5/operaciones-e-isomorfismo.md
+      - "Caminos, ciclos y conexión": ud5/caminos-ciclos-conexion.md
+      - "Eulerianos vs Hamiltonianos": ud5/euler-hamilton.md
+      - "Árboles, DFS y BFS": ud5/arboles-dfs-bfs.md
+      - "Redes: MST y Dijkstra": ud5/redes-mst-dijkstra.md
+      - "Ejercicios resueltos": ud5/ejercicios-resueltos.md
+      - "Ejercicios propuestos": ud5/ejercicios-propuestos.md
+      - "Resumen de la UD5": ud5/resumen.md
+      - "🧪 Examen (Quiz)": ud5/examen-quiz.md
   - "Exámenes y soluciones":
       - "📝 Ejercicios de clase": examenes/ejercicios-clase.md
+      - "🧪 Examen práctica (bajo)": examenes/examen-prueba-bajo.md
+      - "🧪 Examen práctica (medio)": examenes/examen-practica-1.md
+      - "🧪 Examen UD2 (medio)": examenes/examen-ud2-medio.md
+      - "🧪 Examen UD3 (medio)": examenes/examen-ud3-medio.md
+      - "🧪 Examen UD4 (medio)": examenes/examen-ud4-medio.md
+      - "🧪 Examen UD5 (medio)": examenes/examen-ud5-medio.md
