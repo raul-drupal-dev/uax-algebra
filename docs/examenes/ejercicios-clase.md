@@ -2,8 +2,6 @@
 
  _Las soluciones largas están colapsadas por defecto para mejorar la lectura; pulsa en "Solución paso a paso" cuando quieras desplegarlas._
 
-¡Excelente estrategia de estudio! Si el examen se basa en los ejemplos y ejercicios resueltos, dominar la metodología paso a paso es la clave. A continuación, se presenta un resumen completo de todos los ejercicios y ejemplos resueltos en el material de estudio, agrupados por unidad didáctica y tema, incluyendo la explicación teórica y los pasos de solución.
-
 ## UNIDAD DE INDUCCIÓN: INTRODUCCIÓN A VECTORES
 
 ### Tema: Operaciones Básicas y Propiedades
@@ -719,3 +717,142 @@ $A = \begin{pmatrix} 3 & 1 & -1 & -1 \\ 0 & 2 & 0 & 1 \\ 1 & 1 & 1 & 0 \\ 0 & 0 
     4.  **Cálculo de la Matriz de Paso $P$:** (Los vectores se calculan de derecha a izquierda, $v_2, v_4$ en $E_2$ y sus imágenes $v_1, v_3$ en $E_1$,).
     
     $$P = \begin{pmatrix} 1 & 0 & -1 & 0 \\ 0 & 1 & 1 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$$
+
+---
+
+## UNIDAD DIDÁCTICA 5: TEORÍA DE GRAFOS
+
+### Tema 1: Definiciones y conteos
+
+#### Ejercicio 5.1: Aristas en grafos completos
+
+##### Enunciado
+
+¿Cuántas aristas tiene $K_8$? ¿Y $K_{8,3}$?
+
+!!! info "Explicación teórica"
+    n $K_n$ cada par de vértices distintos determina una arista; en $K_{n,m}$ todas las aristas van entre las dos partes.
+
+???+ details "Solución paso a paso" 
+    - En $K_n$ el número de aristas es $\binom{n}{2}=\dfrac{n(n-1)}{2}$. Para $n=8$:
+
+        $$|E(K_8)|=\binom{8}{2}=\frac{8\cdot7}{2}=28.$$
+
+    - En $K_{n,m}$ hay $n\cdot m$ aristas. Para $n=8,m=3$:
+
+        $$|E(K_{8,3})|=8\cdot 3=24.$$
+
+### Tema 2: Grados y lema del saludo
+
+#### Ejercicio 5.2: Uso del lema del saludo
+
+##### Enunciado
+
+Un grafo no dirigido tiene suma de grados igual a 18. ¿Cuántas aristas tiene?
+
+!!! info "Explicación teórica"
+    El lema del saludo dice $\sum_{v\in V}\delta(v)=2|E|$; con la suma conocida despejamos $|E|$.
+
+???+ details "Solución paso a paso"
+    $$2|E|=18\Rightarrow |E|=9.$$
+
+#### Ejercicio 5.3: Compatibilidad de grados
+
+##### Enunciado
+
+¿Puede existir un grafo no dirigido cuyos grados sean $\{3,3,3,2,1,1\}$? Justifica.
+
+!!! info "Explicación teórica"
+    La suma de los grados debe ser par (igual a $2|E|$). Además, el número de vértices de grado impar debe ser par.
+
+???+ details "Solución paso a paso" 
+    - Suma de grados: $3+3+3+2+1+1=13$, que es impar. 
+    - Esto contradice $\sum\delta(v)=2|E|$ (un número par). Por tanto **no existe** tal grafo.
+
+### Tema 3: Dígrafos (entradas y salidas)
+
+#### Ejercicio 5.4: Fuente y sumidero
+
+##### Enunciado
+
+Sea el dígrafo con aristas $E=\{a\to b,\ a\to c,\ a\to d,\ b\to c,\ d\to c,\ e\to a,\ e\to d\}$. Calcula $\delta^+(v)$ y $\delta^-(v)$ para cada vértice e identifica fuentes y sumideros.
+
+!!! info "Explicación teórica"
+    Contamos arcos que salen (grado de salida) y que entran (grado de entrada) para cada vértice.
+
+???+ details "Solución paso a paso" 
+    - Salidas: $\delta^+(a)=3,\ \delta^+(b)=1,\ \delta^+(c)=0,\ \delta^+(d)=1,\ \delta^+(e)=2$. 
+    - Entradas: $\delta^-(a)=1,\ \delta^-(b)=1,\ \delta^-(c)=3,\ \delta^-(d)=2,\ \delta^-(e)=0$. 
+    - Conclusión: $e$ es **fuente** ($\delta^-=0$) y $c$ es **sumidero** ($\delta^+=0$).
+
+### Tema 4: Eulerianos y Hamiltonianos
+
+#### Ejercicio 5.5: Puentes de Königsberg (Euler)
+
+##### Enunciado
+
+Modeliza el problema de los puentes de Königsberg como un grafo y decide si existe un recorrido que atraviese cada puente exactamente una vez.
+
+!!! info "Explicación teórica"
+    Representa las regiones como vértices y los puentes como aristas; aplica el teorema de Euler (paridad de los grados).
+
+???+ details "Solución paso a paso" 
+    - Al modelar el problema clásico aparecen 4 vértices con grados impares. 
+    - Como hay más de dos vértices de grado impar, **no existe** camino euleriano que atraviese todos los puentes una sola vez.
+
+#### Ejercicio 5.6: Aplicar Dirac (Hamilton)
+
+##### Enunciado
+
+Sea $G$ simple con $n=6$ vértices y grado mínimo $\delta(G)=3$. ¿Se puede afirmar que $G$ es hamiltoniano?
+
+!!! info "Explicación teórica"
+    Por el teorema de Dirac, si $\delta(G)\ge n/2$ con $n\ge3$, entonces $G$ es hamiltoniano (condición suficiente).
+
+???+ details "Solución paso a paso" 
+    - Cálculo: $n/2=3$, y $\delta(G)=3\ge 3$. 
+    - Conclusión: Se cumple la condición de Dirac, por tanto **$G$ es hamiltoniano**.
+
+### Tema 5: Árboles y recorridos
+
+#### Ejercicio 5.7: Propiedad de los árboles
+
+##### Enunciado
+
+Si un grafo es un árbol con $n=15$ vértices, ¿cuántas aristas tiene? Si se quita una arista, ¿qué ocurre con la conectividad?
+
+!!! info "Explicación teórica"
+    Un árbol con $n$ vértices tiene $n-1$ aristas; cualquier arista de un árbol es un puente.
+
+???+ details "Solución paso a paso"
+    - Número de aristas: $|E|=n-1=14$. 
+    - Al quitar una arista se desconecta el grafo, quedando exactamente **2 componentes conexas**.
+
+### Tema 6: Redes y algoritmos
+
+#### Ejercicio 5.8: Relajación en Dijkstra
+
+##### Enunciado
+
+En una red con origen $a$ las distancias actuales son $D(a)=0$, $D(b)=2$, $D(c)=4$. Existe arista $b\to c$ de peso 1. ¿Se actualiza $D(c)$ al relajar desde $b$?
+
+!!! info "Explicación teórica"
+    La relajación actualiza $D(c)$ a $\min(D(c),D(b)+w(b,c))$.
+
+???+ details "Solución paso a paso"
+
+    $$D'(c)=\min(4,\ 2+1)=3,$$
+    
+    Sí: se actualiza a $D(c)=3$.
+
+#### Ejercicio 5.9: Aristas de un MST
+
+##### Enunciado
+
+¿Cuántas aristas tiene cualquier MST de un grafo conexo con $n$ vértices?
+
+!!! info "Explicación teórica"
+    Un MST es un árbol de expansión; todo árbol con $n$ vértices tiene $n-1$ aristas.
+
+???+ details "Solución paso a paso"
+    El MST tiene exactamente $n-1$ aristas.

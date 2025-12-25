@@ -5,3 +5,4 @@ watchdog
 mkdocs-macros-plugin
 mkdocs-glightbox
 mkdocs-dracula-theme
+mkdocs-quiz

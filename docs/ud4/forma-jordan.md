@@ -11,7 +11,9 @@ Cuando una matriz no es diagonalizable estudiamos su forma de Jordan. Aquí se r
 ## Subespacios propios generalizados
 
 - Definimos $E_i(\lambda)=\ker(A-\lambda I)^i$. Se obtiene una cadena creciente
-  $$E_1(\lambda)\subseteq E_2(\lambda)\subseteq \dots$$
+
+$$E_1(\lambda)\subseteq E_2(\lambda)\subseteq \dots$$
+
   que se estabiliza y nos permite construir cadenas de vectores generalizados para formar la base de Jordan.
 
 ## Procedimiento resumido
