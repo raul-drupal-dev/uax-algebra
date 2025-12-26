@@ -106,14 +106,14 @@ nav:
       - "🧮 Solución Ejercicio 9": ud1/ejercicio9.md
       - "🧮 Solución Ejercicio 10": ud1/ejercicio10.md
   - "Unidad 2: Espacios vectoriales":
-      - "📚 Conceptos Básicos": ud2/temario.md
+      - "📚 Índice UD2": ud2/index.md
+      - "🏗️ Espacios Vectoriales y Bases": ud2/espacios-vectoriales-y-bases.md
+      - "📍 Coordenadas y Cambio de Base": ud2/coordenadas-cambio-de-base.md
+      - "🔧 Subespacios y Operaciones": ud2/subespacios-operaciones.md
+      - "➗ Espacio Cociente": ud2/espacio-cociente.md
+      - "📋 Resumen de Términos": ud2/temario.md
       - "📝 Ejercicios Prácticos": "ud2/ejercicios.md"
       - "🧮 Solución Ejercicio 1": ud2/ejercicio1.md
-      - "🧮 Solución Ejercicio 2": ud2/ejercicio2.md
-      - "🧮 Solución Ejercicio 3": ud2/ejercicio3.md
-      - "🧮 Solución Ejercicio 4": ud2/ejercicio4.md
-      - "🧮 Solución Ejercicio 5": ud2/ejercicio5.md
-      - "🧮 Solución Ejercicio 6": ud2/ejercicio6.md
   - "Unidad 3: Aplicaciones Lineales":
       - "📚 Índice UD3": ud3/index.md
       - "📝 Ejercicios Prácticos": ud3/ejercicios.md
@@ -159,3 +159,4 @@ nav:
       - "🧪 Examen UD3 (medio)": examenes/examen-ud3-medio.md
       - "🧪 Examen UD4 (medio)": examenes/examen-ud4-medio.md
       - "🧪 Examen UD5 (medio)": examenes/examen-ud5-medio.md
+      - "🧪 Examen final (medio)": examenes/examen-final-propuesta.md

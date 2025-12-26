@@ -856,3 +856,383 @@ En una red con origen $a$ las distancias actuales son $D(a)=0$, $D(b)=2$, $D(c)=
 
 ???+ details "Solución paso a paso"
     El MST tiene exactamente $n-1$ aristas.
+
+---
+
+# Examenes 
+
+## Simulacro 1
+
+### Tarea 1 (2,5 ptos) — Autovalores y diagonalización
+
+##### Enunciado
+
+Considera la matriz dependiente del parámetro $a$:
+
+$$C=\begin{pmatrix}a & 1\\[4pt]0 & 2\end{pmatrix}.$$
+
+a) Encuentra los autovalores de $C$. 
+
+b) Determina para qué valores de $a$ la matriz $C$ es diagonalizable.
+
+!!! info "Explicación teórica"
+    Para una matriz triangular los autovalores son las entradas de la diagonal. Una matriz es diagonalizable si para cada autovalor la multiplicidad geométrica (dimensión del subespacio propio) coincide con su multiplicidad algebraica. Si los autovalores son distintos, la matriz es diagonalizable.
+
+???+ details "Solución paso a paso" 
+    1. **Polinomio característico:**
+
+    $$p_C(\lambda)=\det(C-\lambda I)=(a-\lambda)(2-\lambda).$$
+
+    2.  **Autovalores:** $\lambda_1=a$ y $\lambda_2=2$.
+
+    3.  **Cálculo de autovectores (caso general $a\neq 2$):**
+
+        - Para $\lambda=a$:
+
+        $$(C-aI)v=\begin{pmatrix}0 & 1\\[4pt]0 & 2-a\end{pmatrix}\begin{pmatrix}x\\[4pt]y\end{pmatrix}=0\;\Rightarrow\;y=0.$$ 
+
+        Un autovector correspondiente es $v^{(1)}=(1,0)^T$.
+
+        - Para $\lambda=2$:
+
+        $$(C-2I)v=\begin{pmatrix}a-2 & 1\\[4pt]0 & 0\end{pmatrix}\begin{pmatrix}x\\[4pt]y\end{pmatrix}=0\;\Rightarrow\;(a-2)x+y=0\Rightarrow y=-(a-2)x.$$
+
+        Un autovector correspondiente es por ejemplo $v^{(2)}=(1,\;-(a-2))^T$.
+
+        Como $v^{(1)}$ y $v^{(2)}$ son linealmente independientes cuando $a\neq 2$, hay dos autovectores independientes y la matriz es diagonalizable.
+
+    4.  **Caso $a=2$ (autovalor doble):**
+
+        Si $a=2$ entonces $C=\begin{pmatrix}2&1\\0&2\end{pmatrix}$ y
+
+        $$(C-2I)=\begin{pmatrix}0&1\\0&0\end{pmatrix}.$$ 
+
+        La ecuación $(C-2I)(x,y)^T=0$ obliga a $y=0$, por lo que los autovectores son proporcionales a $(1,0)^T$ (dimensión geométrica $1$). La multiplicidad algebraica es 2 > 1 = multiplicidad geométrica, luego **no es diagonalizable**.
+
+    Conclusión: $C$ es diagonalizable si y sólo si $a\neq 2$.
+
+---
+
+### Tarea 2 (2,5 ptos) — Intersección de planos; imagen y núcleo
+
+##### Enunciado
+
+Sean los planos
+
+$$\pi_1:\;x+y+z=1,\qquad \pi_2:\;2x-y+3z=2.$$
+
+a) Encuentra $\pi_1\cap\pi_2$.
+
+b) Considera la aplicación lineal $F:\mathbb{R}^3\to\mathbb{R}^2$ definida por
+
+$$F(x,y,z)=(x+y+z,\;2x-y+3z).$$
+
+Determina $\mathrm{Im}(F)$ y $\ker(F)$.
+
+!!! info "Explicación teórica"
+    La intersección de dos planos en $\mathbb{R}^3$ (si no son paralelos coincidentes) es una recta paramétrica. La imagen de $F$ está dada por el espacio generado por las filas (o por las imágenes de la base canónica). El núcleo es la solución del sistema homogéneo formado por las ecuaciones de los planos cuando el término constante es 0.
+
+???+ details "Solución paso a paso"
+    a) **Intersección (recta paramétrica):** tomamos $z=t$.
+
+    De $x+y+z=1$ obtenemos $x+y=1-t$. 
+    
+    De $2x-y+3z=2$ obtenemos $2x-y=2-3t$.
+
+    Sumando ambas ecuaciones para eliminar $y$:
+
+    $$(x+y)+(2x-y)=3x=3-4t\Rightarrow x=1-\tfrac{4}{3}t.$$ 
+
+    Sustituyendo en $x+y=1-t$:
+
+    $$y=1-t-x=1-t-(1-\tfrac{4}{3}t)=\tfrac{1}{3}t.$$ 
+
+    Con el cambio de parámetro $t=3u$ (para evitar fracciones) obtenemos
+
+    $$x=1-4u,\\ y=u,\\ z=3u.$$ 
+
+    Por tanto
+
+    $$\pi_1\cap\pi_2=\{(1,0,0)+u(-4,1,3):\;u\in\mathbb{R}\},$$
+
+    es decir una recta que pasa por $(1,0,0)$ con dirección $(-4,1,3)$.
+
+    b) **Imagen de $F$ (fila por fila / reducción):** la matriz asociada es
+
+    $$A=\begin{pmatrix}1&1&1\\[4pt]2&-1&3\end{pmatrix}.$$ 
+
+    Aplicamos operaciones fila para reducir:
+
+    $$\begin{pmatrix}1&1&1\\[4pt]2&-1&3\end{pmatrix}\xrightarrow{F_2-2F_1}\begin{pmatrix}1&1&1\\[4pt]0&-3&1\end{pmatrix}.$$ 
+
+    Hay dos filas no nulas ⇒ $\mathrm{rg}(A)=2$, por tanto $\mathrm{Im}(F)$ es un subespacio de dimensión 2 en $\mathbb{R}^2$, es decir $\mathrm{Im}(F)=\mathbb{R}^2$.
+
+    **Núcleo de $F$ (resolución explícita):** resolvemos
+
+    $$\begin{cases}x+y+z=0\\[4pt]2x-y+3z=0\end{cases}.$$ 
+
+    Restando la primera ecuación multiplicada por 2 de la segunda: $(2x-y+3z)-2(x+y+z)= (2x-y+3z)-(2x+2y+2z)= -3y+z=0$. Así $z=3y$.
+
+    Sustituyendo en $x+y+z=0$: $x+y+3y=0\Rightarrow x=-4y$. Tomando $y=1$ obtenemos el vector $(-4,1,3)$. Entonces
+
+    $$\ker(F)=\mathrm{span}\{(-4,1,3)\},\qquad \dim\ker(F)=1.$$
+
+    Verificación rango-nulidad: $2+1=3$.
+
+---
+
+### Tarea 3 (1 pto) — Dependencia lineal de tres vectores
+
+##### Enunciado
+
+En un sistema de navegación, los vectores de posición de tres puntos en el espacio son
+
+$$v_1=(1,2,-1),\quad v_2=(2,-1,3),\quad v_3=(3,0,2).$$
+
+Determina si los vectores son linealmente independientes. Si son linealmente dependientes, encuentra una relación de dependencia entre ellos.
+
+!!! info "Explicación teórica"
+    Tres vectores de $\mathbb{R}^3$ son linealmente independientes si la matriz que tiene esos vectores como columnas (o filas) tiene determinante no nulo. Si el determinante es cero, existe una combinación lineal no trivial que los anula.
+
+???+ details "Solución paso a paso"
+    Consideramos la matriz con los vectores como columnas:
+
+    $$M=\begin{pmatrix}1&2&3\\[4pt]2&-1&0\\[4pt]-1&3&2\end{pmatrix}.$$ 
+
+    Una forma clara de verificar independencia es resolver
+
+    $$c_1v_1+c_2v_2+c_3v_3=0\;\Longrightarrow\;M\begin{pmatrix}c_1\\[4pt]c_2\\[4pt]c_3\end{pmatrix}=0$$
+
+    y comprobar que la única solución es la trivial. Hacemos eliminación por filas (o calculamos el determinante). Aquí mostramos la eliminación:
+
+    $$\begin{pmatrix}1&2&3\\[4pt]2&-1&0\\[4pt]-1&3&2\end{pmatrix}\xrightarrow{F_2-2F_1}\begin{pmatrix}1&2&3\\[4pt]0&-5&-6\\[4pt]-1&3&2\end{pmatrix}$$
+
+    $$\xrightarrow{F_3+F_1}\begin{pmatrix}1&2&3\\[4pt]0&-5&-6\\[4pt]0&5&5\end{pmatrix}\xrightarrow{F_3+F_2}\begin{pmatrix}1&2&3\\[4pt]0&-5&-6\\[4pt]0&0&-1\end{pmatrix}.$$ 
+
+    De la última fila: $-c_3=0\Rightarrow c_3=0$. De la segunda: $-5c_2-6c_3=0\Rightarrow c_2=0$. De la primera: $c_1+2c_2+3c_3=0\Rightarrow c_1=0$. Sólo la solución trivial ⇒ los vectores son linealmente independientes.
+
+    Alternativamente, calculando el determinante por cofactores se obtiene $\det(M)=5\neq0$, lo que da la misma conclusión: **son linealmente independientes**.
+
+
+# Entregable 1
+
+#### Ejercicio 1. Operaciones con vectores
+
+##### Enunciado
+
+Sean los vectores en $\mathbb{R}^3$:
+
+$$\mathbf{u}=(2,-1,3),\qquad \mathbf{v}=(1,4,-2).$$
+
+a) Calcula $2\mathbf{u}-3\mathbf{v}$. 
+
+b) Calcula el producto escalar $\mathbf{u}\cdot\mathbf{v}$. 
+
+c) Determina el ángulo entre $\mathbf{u}$ y $\mathbf{v}$. 
+
+d) Indica si los vectores son ortogonales.
+
+!!! info "Explicación teórica"
+    El producto escalar en $\mathbb{R}^n$ se define por $\mathbf{u}\cdot\mathbf{v}=\sum u_i v_i$. La norma viene dada por $\|\mathbf{u}\|=\sqrt{\mathbf{u}\cdot\mathbf{u}}$. El coseno del ángulo entre dos vectores es
+
+    $$\cos\theta=\dfrac{\mathbf{u}\cdot\mathbf{v}}{\|\mathbf{u}\|\,\|\mathbf{v}\|}.$$ 
+
+???+ details "Solución paso a paso"
+    a) $2\mathbf{u}=(4,-2,6)$ y $3\mathbf{v}=(3,12,-6)$, por tanto
+
+    $$2\mathbf{u}-3\mathbf{v}=(4-3,\,-2-12,\,6-(-6))=(1,-14,12).$$
+
+    b) Producto escalar:
+
+    $$\mathbf{u}\cdot\mathbf{v}=2\cdot1+(-1)\cdot4+3\cdot(-2)=2-4-6=-8.$$ 
+
+    c) Normas: $\|\mathbf{u}\|=\sqrt{2^2+(-1)^2+3^2}=\sqrt{14}$, $\|\mathbf{v}\|=\sqrt{1^2+4^2+(-2)^2}=\sqrt{21}$. Entonces
+
+    $$\cos\theta=\dfrac{-8}{\sqrt{14\cdot21}}=\dfrac{-8}{\sqrt{294}}.$$ 
+
+    Por tanto $\theta=\arccos\left(-8/\sqrt{294}\right)$ (valor negativo del coseno indica ángulo obtuso).
+
+    d) No son ortogonales porque $\mathbf{u}\cdot\mathbf{v}\neq0$.
+
+---
+
+#### Ejercicio 2. Dependencia lineal
+
+##### Enunciado
+
+Considera los vectores en $\mathbb{R}^3$:
+
+$$\mathbf{a}=(1,2,3),\quad \mathbf{b}=(2,4,6),\quad \mathbf{c}=(0,1,1).$$
+
+a) Determina si $\{\mathbf{a},\mathbf{b},\mathbf{c}\}$ es linealmente dependiente o independiente.
+
+b) En caso de dependencia, expresa uno de los vectores como combinación lineal de los otros.
+
+!!! info "Explicación teórica"
+    Si un vector del conjunto es combinación lineal de los demás, el conjunto es linealmente dependiente. En particular, si uno es múltiplo escalar de otro, existe dependencia.
+
+???+ details "Solución paso a paso"
+    Observamos que $\mathbf{b}=2\mathbf{a}$, por lo tanto $\mathbf{b}$ es combinación lineal de $\mathbf{a}$ y el conjunto es linealmente dependiente.
+
+    Una relación de dependencia explícita es
+
+    $$2\mathbf{a}-\mathbf{b}=\mathbf{0}.$$ 
+
+    Como respuesta alternativa, se puede ver que los tres no son todos L.I. porque basta la dependencia entre $\mathbf{a}$ y $\mathbf{b}$.
+
+---
+
+#### Ejercicio 3. Coordenadas en distintas bases
+
+##### Enunciado
+
+Sea la base canónica $B=\{(1,0,0),(0,1,0),(0,0,1)\}$ y la base
+
+$$B' = \{(1,1,0),(0,1,1),(1,0,1)\}.$$ 
+
+El vector $\mathbf{x}=(2,1,3)$ está dado en coordenadas canónicas. 
+
+a) Calcula las coordenadas de $\mathbf{x}$ respecto a $B'$. 
+
+b) Verifica reconstruyendo $\mathbf{x}$ a partir de $B'$.
+
+!!! info "Explicación teórica"
+    Buscamos escalares $\alpha,\beta,\gamma$ tales que
+
+    $$\alpha(1,1,0)+\beta(0,1,1)+\gamma(1,0,1)=(2,1,3).$$
+
+    Esto conduce a un sistema lineal sencillo para las coordenadas en $B'$.
+
+???+ details "Solución paso a paso"
+    Planteamos las ecuaciones por componentes:
+
+    $$\begin{cases}\alpha+\gamma=2\\[4pt]\alpha+\beta=1\\[4pt]\beta+\gamma=3\end{cases}$$
+
+    De la segunda $\beta=1-\alpha$. Sustituyendo en la tercera: $1-\alpha+\gamma=3\Rightarrow\gamma=2+\alpha$. Sustituyendo en la primera: $\alpha+(2+\alpha)=2\Rightarrow2\alpha+2=2\Rightarrow\alpha=0$. Luego $\beta=1$, $\gamma=2$.
+
+    Por tanto las coordenadas de $\mathbf{x}$ en $B'$ son $[\mathbf{x}]_{B'}=(0,1,2)^T$.
+
+    Verificación:
+
+    $$0(1,1,0)+1(0,1,1)+2(1,0,1)=(2,1,3),$$
+
+    que coincide con $\mathbf{x}$.
+
+---
+
+#### Ejercicio 4. Cambio de base
+
+##### Enunciado
+
+En $\mathbb{R}^2$ se consideran las bases
+
+$$B_1=\{(1,0),(0,1)\},\qquad B_2=\{(1,1),(1,-1)\}.$$ 
+
+a) Calcula la matriz de cambio de base de $B_2$ a $B_1$. 
+
+b) Calcula la matriz inversa (de $B_1$ a $B_2$). 
+
+c) Si $[\mathbf{v}]_{B_2}=(3,1)^T$, encuentra $[\mathbf{v}]_{B_1}$ (coordenadas canónicas).
+
+!!! info "Explicación teórica"
+    La matriz de cambio de base de $B_2$ a la base canónica $B_1$ tiene como columnas los vectores de $B_2$ expresados en la base canónica. La inversa transforma coordenadas canónicas a coordenadas en $B_2$.
+
+???+ details "Solución paso a paso"
+    a) Matriz de paso $P$ (columnas = vectores de $B_2$):
+
+    $$P=\begin{pmatrix}1&1\\[4pt]1&-1\end{pmatrix}.$$ 
+
+    b) Determinante $\det(P)=1\cdot(-1)-1\cdot1=-2$. Entonces
+
+    $$P^{-1}=\frac{1}{-2}\begin{pmatrix}-1&-1\\[4pt]-1&1\end{pmatrix}=\begin{pmatrix}1/2&1/2\\[4pt]1/2&-1/2\end{pmatrix}.$$ 
+
+    c) Si $[\mathbf{v}]_{B_2}=(3,1)^T$, las coordenadas en la base canónica son
+
+    $$[\mathbf{v}]_{B_1}=P\begin{pmatrix}3\\[4pt]1\end{pmatrix}=\begin{pmatrix}1&1\\[4pt]1&-1\end{pmatrix}\begin{pmatrix}3\\[4pt]1\end{pmatrix}=\begin{pmatrix}4\\[4pt]2\end{pmatrix}.$$ 
+
+    Es decir, $\mathbf{v}=(4,2)$ en coordenadas canónicas.
+
+---
+
+#### Ejercicio 5. Coordenadas paramétricas y cartesianas
+
+##### Enunciado
+
+Sea el subespacio $U\subset\mathbb{R}^3$ generado por
+
+$$\mathbf{u}_1=(1,2,1),\qquad \mathbf{u}_2=(0,1,1).$$
+
+a) Escribe las ecuaciones paramétricas de $U$. 
+
+b) Obtén las ecuaciones cartesianas que definen el mismo subespacio.
+
+!!! info "Explicación teórica"
+    Un subespacio generado por dos vectores en $\mathbb{R}^3$ es un plano (dimensión 2) que puede describirse por parámetros (combinación lineal) o por una ecuación lineal que satisfacen sus puntos (forma cartesiana).
+
+???+ details "Solución paso a paso"
+    a) Punto genérico del subespacio:
+
+    $$\mathbf{x}=s\mathbf{u}_1+t\mathbf{u}_2=s(1,2,1)+t(0,1,1)=(s,2s+t,s+t).$$
+
+    Es decir, las ecuaciones paramétricas son
+
+    $$x=s,\quad y=2s+t,\quad z=s+t\; (s,t\in\mathbb{R}).$$
+
+    b) Eliminamos los parámetros: de $x=s$ y $z=s+t$ obtenemos $t=z-x$. Sustituyendo en $y=2s+t$:
+
+    $$y=2x+(z-x)=x+z.$$ 
+
+    Por tanto la ecuación cartesiana del plano es
+
+    $$y-x-z=0.$$ 
+
+    Verificación: los generadores satisfacen la ecuación (por ejemplo $(1,2,1)$ cumple $2-1-1=0$).
+
+
+# Entregable 2
+
+### Intersección de subespacios — Ejercicio resuelto
+
+##### Enunciado
+
+En esta tarea trabajamos la intersección de espacios vectoriales. Dados
+
+$$S=\operatorname{span}\{(1,-1,1),(0,3,-4)\}\subset\mathbb{R}^3,\qquad T=\{(x,y,z)\in\mathbb{R}^3:\;x+y-2z=0\},$$
+
+calcula un sistema generador de $S\cap T$.
+
+!!! info "Explicación teórica"
+    Un vector $v\in S\cap T$ se escribe como combinación lineal de los generadores de $S$ y además debe satisfacer la ecuación que define $T$. Así planteamos
+
+    $$v=s(1,-1,1)+t(0,3,-4)$$
+
+    y imponemos la condición lineal de $T$: $x+y-2z=0$. Resolver ese sistema nos da las relaciones entre $s$ y $t$, y por tanto un generador del espacio intersección.
+
+???+ details "Solución paso a paso"
+    1.  Vector general en $S$:
+
+        $$v=(x,y,z)=s(1,-1,1)+t(0,3,-4)=(s,\,-s+3t,\;s-4t).$$
+
+    2.  Imponer la condición de $T$: $x+y-2z=0$. Sustituimos las componentes:
+
+        $$s+(-s+3t)-2(s-4t)=0\Longrightarrow -2s+11t=0.$$ 
+
+    3.  Resolver la relación: $11t=2s\Rightarrow t=\tfrac{2}{11}s$. Sustituimos en la expresión de $v$:
+
+        $$v=s\bigl(1,\;-1+3\cdot\tfrac{2}{11},\;1-4\cdot\tfrac{2}{11}\bigr)=s\Bigl(1,\;-\tfrac{5}{11},\;\tfrac{3}{11}\Bigr).$$
+
+    4.  Factorizando para tener coordenadas enteras:
+
+        $$v=\frac{s}{11}(11,\,-5,\;3).$$
+
+    Por tanto
+
+    $$S\cap T=\operatorname{span}\{(11,-5,3)\}.$$
+
+    5.  **Verificación rápida:** $(11,-5,3)$ pertenece a $S$ porque existen $s,t$ (en concreto $s=11$, $t=2$) tales que
+
+    $$11(1,-1,1)+2(0,3,-4)=(11,-11+6,11-8)=(11,-5,3).$$
+
+    Y pertenece a $T$ pues $11+(-5)-2\cdot3=11-5-6=0$.
+
+    Conclusión: un sistema generador de $S\cap T$ es $\{(11,-5,3)\}$ (o cualquier múltiplo no nulo de ese vector).

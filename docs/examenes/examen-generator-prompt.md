@@ -37,7 +37,7 @@ Reglas de contenido y coherencia:
 - No repetir enunciados o respuestas idénticas entre preguntas.
 - En preguntas de cálculo incluir la solución correcta entre las opciones y al menos una distracción razonable (optar por errores frecuentes: signo invertido, término perdido, confusión entre multiplicidad algebraica/geométrica, etc.).
 - Mantener variedad: combinar teoría (definiciones, teoremas) y práctica (cálculos). Priorizar las unidades indicadas en `units` (p.ej. UD4 y UD5) pero incluir preguntas de UD2 y UD3 si `units` las lista.
-- Si `use_template_exercises=true`, reescribe ejercicios tomando como base la estructura de `docs/examenes/ejercicios-clase.md`: conserva el tipo de ejercicio (p.ej. núcleo e imagen, sistemas por Gauss, cambio de base, diagonalización, preguntas de grafos) pero cambia coeficientes, constantes numéricas, matrices y vectores para crear variantes nuevas. No cambies la naturaleza del ejercicio (p.ej. si el original es calcular un núcleo, el generado también debe pedir el núcleo).
+- Si `use_template_exercises=true`, reescribe ejercicios tomando como base la estructura de `docs/examenes/ejercicios-clase.md`: conserva el tipo de ejercicio (p.ej. núcleo e imagen, sistemas por Gauss, cambio de base, diagonalización, preguntas de grafos) pero cambia coeficientes, constantes numéricas, matrices y vectores para crear variantes nuevas. Da prioridad sobretodo a los entregables y los examenes propuestos del final. No cambies la naturaleza del ejercicio (p.ej. si el original es calcular un núcleo, el generado también debe pedir el núcleo).
 
 Comprobaciones internas que debe realizar la IA antes de devolver el examen:
 
