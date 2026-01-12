@@ -57,9 +57,13 @@ Ejemplos de uso combinado (admonition + emoji + títulos):
    
    consejo descriptivo
 
+Para los ejemplos de ejercicios para estudiar utilizaremos este combinado:
+
 ???+ example "ejemplo 1"
 
    Desarrollo del ejemplo
+
+Para los ejercicios que se deban de realizar para luego ser corregidos utilizaremos este conbinado:
 
 ???- example "ejercicio 1"
 

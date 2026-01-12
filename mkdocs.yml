@@ -83,6 +83,7 @@ nav:
       - "UD3: Aplicaciones Lineales": ud3/index.md
       - "UD4: Diagonalización": ud4/index.md
       - "UD5: Teoría de grafos": ud5/index.md
+      - "UD6: Combinatoria": ud6/index.md
       - "Examenes y soluciones": examenes/ejercicios-clase.md
   - "Temario (Global)":
       - "📘 Temario del curso": temario/index.md
@@ -151,6 +152,11 @@ nav:
       - "Ejercicios propuestos": ud5/ejercicios-propuestos.md
       - "Resumen de la UD5": ud5/resumen.md
       - "🧪 Examen (Quiz)": ud5/examen-quiz.md
+  - "Unidad 6: Combinatoria":
+      - "📚 Índice UD6": ud6/index.md
+      - "📝 Ejercicios UD6": ud6/ejercicios.md
+      - "🧪 Examen de Formulación": ud6/examen-formulacion.md
+      - "🧪 Examen Práctico (medio)": ud6/examen-practico.md
   - "Exámenes y soluciones":
       - "📝 Ejercicios de clase": examenes/ejercicios-clase.md
       - "🧪 Examen práctica (bajo)": examenes/examen-prueba-bajo.md
@@ -159,4 +165,6 @@ nav:
       - "🧪 Examen UD3 (medio)": examenes/examen-ud3-medio.md
       - "🧪 Examen UD4 (medio)": examenes/examen-ud4-medio.md
       - "🧪 Examen UD5 (medio)": examenes/examen-ud5-medio.md
+      - "🧪 Examen final (apuesta Raúl)": examenes/examen-raul-final.md
+      - "🧪 Examen final (apuesta Pablo)": examenes/examen-pablo-final.md
       - "🧪 Examen final (medio)": examenes/examen-final-propuesta.md
