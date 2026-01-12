@@ -1,59 +1,128 @@
 # Algoritmo paso a paso 3x3 — Diagonalización
 
-En este documento aplicamos el algoritmo de diagonalización a un ejemplo concreto de dimensión 3. El objetivo es practicar el cálculo del polinomio característico, autovalores, multiplicidades, autovectores y construcción de la matriz de paso $P$ que diagonaliza la matriz.
+### Método de Sarrus (explicado paso a paso)
 
-## Matriz de trabajo
+Vamos a calcular el polinomio característico en la forma monica habitual usando $p_A(x)=\det(xI - A)$ y aplicando la regla de Sarrus, para evitar signos confusos.
 
-Consideremos la matriz simétrica
+1. Escribimos la matriz $xI - A$:
 
-$$A=\begin{pmatrix}4 & 1 & 1\\1 & 4 & 1\\1 & 1 & 4\end{pmatrix}$$
+$$
+xI - A = \begin{pmatrix}x-4 & -1 & -1 \\ -1 & x-4 & -1 \\ -1 & -1 & x-4\end{pmatrix}.
+$$
 
-Esta familia de matrices (mismo valor en la diagonal y 1 en las entradas fuera de la diagonal) es un buen ejemplo porque muestra una raíz simple y una raíz con multiplicidad 2.
+??? tip "Regla de Sarrus"
 
-## 1. Polinomio característico
+    Para una matriz 3x3 $\begin{pmatrix}a&b&c\\d&e&f\\g&h&i\end{pmatrix}$,
 
-Calculamos
+    $$\det = aei + bfg + cdh - ceg - bdi - afh.$$
+    
+    Es decir, suma de las tres diagonales principales menos la suma de las tres diagonales secundarias.
 
-$$p_A(x)=\det(A-xI)=(4-x-1-1)\cdot(\cdots)\quad\text{(procedimiento de desarrollo)}$$
+2. Identificamos los productos diagonales en $xI-A$:
 
-En este caso podemos usar la fórmula conocida para matrices con diagonal $a$ y off-diagonal $b$ en dimensión 3: los autovalores son $a+2b$ (multiplicidad 1) y $a-b$ (multiplicidad 2). Para $a=4$, $b=1$:
+- Diagonales principales:
 
-$$p_A(x)=(x-6)(x-3)^2$$
+  - $(x-4)(x-4)(x-4) = (x-4)^3$,
+  - $(-1)(-1)(-1) = -1$,
+  - $(-1)(-1)(-1) = -1$.
+    Suma principal = $(x-4)^3 - 2$.
 
-Por tanto los autovalores son
+- Diagonales secundarias:
+  - $(-1)(x-4)(-1) = (x-4)$,
+  - $(x-4)(-1)(-1) = (x-4)$,
+  - $(-1)(-1)(x-4) = (x-4)$.
+    Suma secundaria = $3(x-4)$.
 
-- $\lambda_1=6$ con multiplicidad algebraica $a_1=1$.
-- $\lambda_2=3$ con multiplicidad algebraica $a_2=2$.
+3. Determinante (Sarrus):
+
+$$
+p_A(x)=\det(xI-A) = \text{suma principal} - \text{suma secundaria} = (x-4)^3 - 2 - 3(x-4).
+$$
+
+4. Simplificamos con la sustitución $y = x-4$ (para ver la factorización más claro):
+
+$$
+p_A(x) = y^3 - 3y - 2 = (y-2)(y+1)^2.
+$$
+
+Volviendo a $x$ (con $y=x-4$):
+
+$$
+p_A(x) = (x-6)(x-3)^2.
+$$
+
+??? tip "Consejo — interpretar multiplicidades"
+
+    Si un factor $(x-\alpha)^m$ aparece en $p_A(x)$, el autovalor $\alpha$ tiene multiplicidad algebraica $m$. Aquí $3$ aparece con multiplicidad 2 y $6$ con multiplicidad 1.
+
+Así obtenemos los autovalores: $\lambda_1=6$ (mult. 1) y $\lambda_2=3$ (mult. 2).
+
+Esto no está ayudando. Mejor usar la fórmula conocida.
+
+### "Fórmula conocida"
+
+Para matrices de la forma $\begin{pmatrix}a & b & b \\ b & a & b \\ b & b & a\end{pmatrix}$, los autovalores son $a+2b$ (multiplicidad 1) y $a-b$ (multiplicidad 2).
+
+Aquí $a=4$, $b=1$, así que $\lambda_1 = 4 + 2\cdot1 = 6$ (mult. 1), $\lambda_2 = 4 - 1 = 3$ (mult. 2).
+
+Por tanto, $p_A(x) = (x-6)(x-3)^2$.
+
+Por tanto, los autovalores son:
+
+- $\lambda_1 = 6$ con multiplicidad algebraica $a_1 = 1$.
+- $\lambda_2 = 3$ con multiplicidad algebraica $a_2 = 2$.
 
 ## 2. Cálculo de los autovectores
 
 ### Autovector para $\lambda_1=6$
 
-Resolvemos $(A-6I)v=0$:
+Resolvemos el sistema $(A - 6I)v = 0$, donde $v = (x, y, z)^\top$:
 
-$$A-6I=\begin{pmatrix}-2 & 1 & 1\\1 & -2 & 1\\1 & 1 & -2\end{pmatrix}$$
+$$A - 6I = \begin{pmatrix} -2 & 1 & 1 \\ 1 & -2 & 1 \\ 1 & 1 & -2 \end{pmatrix}$$
 
-Sumando las tres ecuaciones observamos que las filas suman cero, lo que sugiere que un autovector es $v^{(1)}=(1,1,1)^T$. Verificamos:
+El sistema de ecuaciones es:
 
-$$A\begin{pmatrix}1\\1\\1\end{pmatrix}=\begin{pmatrix}6\\6\\6\end{pmatrix}=6\begin{pmatrix}1\\1\\1\end{pmatrix}.$$
+\[
+\begin{cases}
+-2x + y + z = 0 \\
+x - 2y + z = 0 \\
+x + y - 2z = 0
+\end{cases}
+\]
+
+Sumando las tres ecuaciones: $(-2x + y + z) + (x - 2y + z) + (x + y - 2z) = 0 \Rightarrow 0 = 0$, lo que confirma consistencia.
+
+De la primera ecuación: $y + z = 2x \Rightarrow y = 2x - z$
+
+Sustituyendo en la segunda: $x - 2(2x - z) + z = 0 \Rightarrow x - 4x + 2z + z = 0 \Rightarrow -3x + 3z = 0 \Rightarrow x = z$
+
+Entonces, $y = 2x - x = x$
+
+Por tanto, $v = (x, x, x)^\top = x(1,1,1)^\top$. Un autovector es $v^{(1)} = (1,1,1)^\top$.
+
+Verificación: $A v^{(1)} = \begin{pmatrix}4&1&1\\1&4&1\\1&1&4\end{pmatrix} \begin{pmatrix}1\\1\\1\end{pmatrix} = \begin{pmatrix}6\\6\\6\end{pmatrix} = 6 \begin{pmatrix}1\\1\\1\end{pmatrix}$.
 
 ### Autovectores para $\lambda_2=3$
 
-Resolvemos $(A-3I)v=0$:
+Resolvemos $(A - 3I)v = 0$:
 
-$$A-3I=\begin{pmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\end{pmatrix}.$$
+$$A - 3I = \begin{pmatrix}1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1\end{pmatrix}$$
 
-Todas las filas son iguales, por lo que el rango es 1 y la nulidad es 2: $d_2=2$ (como esperábamos). La ecuación que hay que satisfacer es
+El sistema es:
 
-$$v_1+v_2+v_3=0.$$
+\[
+\begin{cases}
+x + y + z = 0 \\
+x + y + z = 0 \\
+x + y + z = 0
+\end{cases}
+\]
 
-Dos vectores independientes que cumplen esto son, por ejemplo,
+Todas las ecuaciones son la misma: $x + y + z = 0$. El rango es 1, nulidad 2.
 
-$$v^{(2)}=\begin{pmatrix}1\\-1\\0\end{pmatrix},\qquad v^{(3)}=\begin{pmatrix}1\\0\\-1\end{pmatrix}.$$
+Dos soluciones independientes: $v^{(2)} = (1, -1, 0)^\top$, $v^{(3)} = (1, 0, -1)^\top$.
 
-Comprobación rápida:
-
-$$A v^{(2)}=3 v^{(2)},\qquad A v^{(3)}=3 v^{(3)}.$$
+Verificación: $A v^{(2)} = 3 v^{(2)}$, $A v^{(3)} = 3 v^{(3)}$.
 
 ## 3. Construcción de $P$ y $D$
 
@@ -76,18 +145,12 @@ y hemos diagonalizado $A$.
 
 ---
 
-???+ details "Solución paso a paso"
+???+ details "Solución paso a paso completa"
 
-    1) Polinomio característico: si expandimos $\det(A-xI)$ obtenemos
+    1. **Polinomio característico**: Usando la fórmula conocida, $p_A(x) = (x-6)(x-3)^2$.
 
-    $$p_A(x)=(x-6)(x-3)^2$$
+    2. **Autovector para $\lambda=6$**: Resolver $(A-6I)v=0$ da $x=y=z$, así $v^{(1)}=(1,1,1)^T$.
 
-    2) Para $\lambda=6$, resolver $(A-6I)v=0$. Una solución es
+    3. **Autovectores para $\lambda=3$**: Resolver $(A-3I)v=0$ da $x+y+z=0$. Soluciones: $v^{(2)}=(1,-1,0)^T$, $v^{(3)}=(1,0,-1)^T$.
 
-    $$v^{(1)}=(1,1,1)^T$$
-
-    3) Para $\lambda=3$, resolver $(A-3I)v=0$ da la condición $v_1+v_2+v_3=0$. Elegimos dos soluciones independientes:
-
-    $$v^{(2)}=(1,-1,0)^T,\qquad v^{(3)}=(1,0,-1)^T$$
-
-    4) Formamos $P$ con columnas $v^{(1)},v^{(2)},v^{(3)}$ y calculamos $D=P^{-1}AP=\mathrm{diag}(6,3,3)$. Verificamos $\det(P)=3\neq0$.
+    4. **Matriz $P$**: Columnas $v^{(1)}, v^{(2)}, v^{(3)}$; $D = \diag(6,3,3)$. Verificar $\det(P) \neq 0$.

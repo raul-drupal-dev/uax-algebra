@@ -54,7 +54,24 @@ Formato visual y UX (nuevas reglas)
 Ejemplos de uso combinado (admonition + emoji + títulos):
 
 !!! tip "✨ Buen consejo"
+   
+   consejo descriptivo
+
+Para los ejemplos de ejercicios para estudiar utilizaremos este combinado:
+
+???+ example "ejemplo 1"
+
+   Desarrollo del ejemplo
+
+Para los ejercicios que se deban de realizar para luego ser corregidos utilizaremos este conbinado:
+
+???- example "ejercicio 1"
+
+   Desarrollo del ejercicio
+
 Usa H2 (`##`) para la idea principal y H3 (`###`) para los pasos. Coloca la fórmula en su propio párrafo y **resalta** el resultado.
+
+La definicion de los ejercicios y los ejemplo deben de ir fuera del tip, es decir deben de estan antes.
 
 ### Ejemplo visual:
 

@@ -38,6 +38,11 @@ compose-up:
 compose-down:
 	docker-compose down
 
+up: docker-build
+	@echo "Running uax-algebra:latest foreground (polling watcher, named 'uax-algebra') — abre http://127.0.0.1:8000"
+	# Establecemos USE_POLLING=1 dentro del contenedor para forzar el watcher por polling
+	docker run --rm -it -p 8000:8000 -v "$$PWD":/docs -e USE_POLLING=1 --name uax-algebra uax-algebra:latest
+
 ## Limpia artefactos generados
 clean:
 	# eliminar imagen local y carpeta site

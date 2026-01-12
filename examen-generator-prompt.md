@@ -121,7 +121,8 @@ Explicación breve: Una o dos frases que justifican la(s) respuesta(s) correcta(
 ## Soluciones desarrolladas
 
 ???- details "Solución pregunta 1 — <título breve>"
-Desarrollo completo y justificado (operaciones fila a fila, LaTeX, comprobaciones).
+  
+  Desarrollo completo y justificado (operaciones fila a fila, LaTeX, comprobaciones).
 
 Fin.
 
