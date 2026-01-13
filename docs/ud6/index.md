@@ -36,28 +36,43 @@ La **combinatoria** es el arte de contar sin enumerar. En lugar de listar todas 
 
 Antes de aplicar cualquier fórmula, pregúntate en este orden:
 
-```
-            ┌───────────────────────────────────┐
-            │       Problema de conteo          │
-            └───────────────┬───────────────────┘
-                            │
-                    ¿Usas TODOS los elementos?
-                        /                  \
-                      SÍ                    NO
-                      │                      │
-                ¿Importa el orden?    ¿Importa el orden?
-                    /                   /            \
-                  SÍ                  SÍ              NO
-                  │                   │               │
-            PERMUTACIÓN         VARIACIÓN      COMBINACIÓN
-                  │                   │               │
-            ¿Hay repetición?   ¿Hay repetición?  ¿Hay repetición?
-                /      \           /      \          /      \
-              SÍ       NO        SÍ       NO       SÍ       NO
-              │        │         │        │         │       │
-P_n^{n_1,...,n_r}     P_n    VR_{n,k}  V_{n,k}  CR_{n,k}  C_{n,k}
-              |        |         |        |         |           \
-   n!/(n_1!…n_r!)     n!       n^k   n!/(n-k)! (n+k-1\choose k) n!/(k!(n-k)!)
+```mermaid
+---
+config:
+  flowchart:
+    htmlLabels: true
+---
+flowchart TD
+    A["🎯 Problema de conteo"]
+    A --> B{"¿Usas TODOS<br/>los elementos?"}
+
+    B -->|SÍ| C{"¿Importa<br/>el orden?"}
+    B -->|NO| D{"¿Importa<br/>el orden?"}
+
+    C -->|SÍ| E{"¿Hay<br/>repetición?"}
+    C -->|NO| F["⚠️ Error: si usas<br/>todos, siempre importa<br/>algo"]
+
+    D -->|SÍ| G{"¿Hay<br/>repetición?"}
+    D -->|NO| H{"¿Hay<br/>repetición?"}
+
+    E -->|SÍ| I["<b>PERMUTACIÓN<br/>con repetición</b><br/>P<sub>n</sub><sup>n₁,n₂,...,nᵣ</sup><br/> $$\dfrac{n!}{\prod n_i!}$$"]
+    E -->|NO| J["<b>PERMUTACIÓN</b><br/>P<sub>n</sub><br/> $$n!$$ "]
+
+    G -->|SÍ| K["<b>VARIACIÓN<br/>con repetición</b><br/>VR<sub>n,k</sub><br/> $$n^k$$"]
+    G -->|NO| L["<b>VARIACIÓN</b><br/>V<sub>n,k</sub><br/> $$\dfrac{n!}{(n-k)!}$$"]
+
+    H -->|SÍ| M["<b>COMBINACIÓN<br/>con repetición</b><br/>CR<sub>n,k</sub><br/> $${n+k-1\choose k}$$"]
+    H -->|NO| N["<b>COMBINACIÓN</b><br/>C<sub>n,k</sub><br/> $${n\choose k}$$"]
+
+    classDef pregunta fill:#4a90e2,stroke:#2c5aa0,stroke-width:2px,color:#fff,font-weight:bold
+    classDef respuesta fill:#7ed321,stroke:#5fa314,stroke-width:2px,color:#000,font-weight:bold
+    classDef error fill:#d94040,stroke:#a01010,stroke-width:2px,color:#fff,font-weight:bold
+    classDef inicio fill:#f5a623,stroke:#c87f1a,stroke-width:2px,color:#fff,font-weight:bold
+
+    class B,C,D,E,G,H pregunta
+    class I,J,K,L,M,N respuesta
+    class F error
+    class A inicio
 ```
 
 Este árbol te guiará a la fórmula correcta. **Veamos cada rama.**
