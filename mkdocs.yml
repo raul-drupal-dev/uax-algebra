@@ -66,10 +66,16 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - admonition
 
 extra_javascript:
+  # Mermaid para diagramas (flowcharts, etc.)
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
   # MathJax v3 para renderizar LaTeX ($...$, $$...$$) en el sitio generado.
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 

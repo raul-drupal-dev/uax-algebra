@@ -118,7 +118,9 @@ Explicación: Permutaciones de 2 elementos: $P(6,2)=6\cdot 5$.
 ???- details "Solución pregunta 2 — Dependencia en R2"
 
     Matriz con columnas $v_1=(1,2)$ y $v_2=(2,4)$:
+
     $$M=\begin{pmatrix}1&2\\2&4\end{pmatrix}$$
+    
     Rango 1 porque la segunda columna es $2\times$ la primera. También se ve que $v_2=2v_1$. Sólo hay un vector independiente $\Rightarrow$ dependientes.
 
 ???- details "Solución pregunta 3 — Coordenadas en B'"
@@ -143,7 +145,9 @@ Explicación: Permutaciones de 2 elementos: $P(6,2)=6\cdot 5$.
     **2. Aditividad:** $T(u+v)=T(u)+T(v)$
 
     Sean $u=(x_1,y_1)$, $v=(x_2,y_2)$:
+
     $$T(u+v)=(3(x_1+x_2)-(y_1+y_2),\,(x_1+x_2)+2(y_1+y_2))$$
+
     $$= (3x_1-y_1,\,x_1+2y_1) + (3x_2-y_2,\,x_2+2y_2)=T(u)+T(v)$$
 
     **3. Homogeneidad:** $T(\alpha u)=\alpha T(u)$
@@ -161,23 +165,30 @@ Explicación: Permutaciones de 2 elementos: $P(6,2)=6\cdot 5$.
     Sea $A=\begin{pmatrix}0&1\\1&0\end{pmatrix}$. Buscamos $P^{-1}AP=D$.
 
     **Paso 1: Polinomio característico**
+
     $$\det(A-\lambda I)=\det\begin{pmatrix}-\lambda&1\\1&-\lambda\end{pmatrix}=\lambda^2-1=0$$
 
     **Paso 2: Autovalores**
+
     $$\lambda_1=1, \quad \lambda_2=-1$$
 
     **Paso 3: Autovector para $\lambda_1=1$**
+
     $$A-I=\begin{pmatrix}-1&1\\1&-1\end{pmatrix}$$
+
     Ecuación $-x+y=0 \implies y=x$. Tomamos $v_1=(1,1)$.
 
     **Paso 4: Autovector para $\lambda_2=-1$**
+
     $$A+I=\begin{pmatrix}1&1\\1&1\end{pmatrix}$$
+
     Ecuación $x+y=0 \implies y=-x$. Tomamos $v_2=(1,-1)$.
 
     **Paso 5: Matriz de paso y diagonal**
     $$P=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\quad D=\begin{pmatrix}1&0\\0&-1\end{pmatrix}$$
 
     **Paso 6: Verificación breve**
+
     Con $\det P=-2\neq 0$, $P$ es invertible y cumple $P^{-1}AP=D$.
 
     **Conclusión:** $A$ es diagonalizable con esos autovalores y autovectores.
@@ -187,12 +198,17 @@ Explicación: Permutaciones de 2 elementos: $P(6,2)=6\cdot 5$.
     Sea $C=\begin{pmatrix}2&0\\0&2\end{pmatrix}$. Es diagonal; cualquier base de autovectores sirve.
 
     **Paso 1: Autovalor**
+
     Polinomio: $(2-\lambda)^2=0 \implies \lambda=2$ (doble).
 
     **Paso 2: Espacio propio**
-    $(C-2I)v=0 \Rightarrow \begin{pmatrix}0&0\\0&0\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=0$. Todo vector no nulo es autovector; tomamos $v_1=(1,0)$, $v_2=(0,1)$.
+
+    $(C-2I)v=0 \Rightarrow \begin{pmatrix}0&0\\0&0\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=0$. 
+    
+    Todo vector no nulo es autovector; tomamos $v_1=(1,0)$, $v_2=(0,1)$.
 
     **Paso 3: Matrices $P$ y $D$**
+
     $$P=I=\begin{pmatrix}1&0\\0&1\end{pmatrix},\quad D=\begin{pmatrix}2&0\\0&2\end{pmatrix}$$
 
     **Conclusión:** $C$ ya está diagonal; $P^{-1}CP=D$ es inmediato.
