@@ -4,6 +4,25 @@ En esta página explicamos cómo comprobar si una matriz es diagonalizable y qu�
 
 ## Pasos rápidos para comprobar diagonalización
 
+### Árbol de Decisión
+
+```mermaid
+graph TD
+    A["Paso 1:<br/>Calcular polinomio característico<br/>p(x) = det(A - xI)"] --> B["Paso 2:<br/>Factorizar p(x)<br/>en R o C"]
+    B --> C["¿Todos los autovalores<br/>son distintos?"]
+    C -->|Sí| D["✅ ES DIAGONALIZABLE"]
+    C -->|No| E["Paso 3:<br/>Para cada autovalor λ repetido:<br/>calcular mult. algebraica a(λ)<br/>y mult. geométrica d(λ)"]
+    E --> F["¿Para todo λ se cumple<br/>d(λ) = a(λ)?"]
+    F -->|Sí| G["✅ ES DIAGONALIZABLE"]
+    F -->|No| H["❌ NO DIAGONALIZABLE<br/>Usar Forma de Jordan"]
+
+    style D fill:#ccffcc
+    style G fill:#ccffcc
+    style H fill:#ffcccc
+```
+
+### Procedimiento Detallado
+
 1. Calcular el polinomio característico $p_A(x)=\det(A-xI)$.
 2. Factorizar $p_A(x)$ en el cuerpo que estemos trabajando (ej. $\mathbb{R}$ o $\mathbb{C}$).
 3. Para cada autovalor $\lambda$: calcular $a_\lambda$ (multiplicidad algebraica) y $d_\lambda=\dim\ker(A-\lambda I)$ (multiplicidad geométrica).

@@ -25,7 +25,8 @@ Un **espacio vectorial** $V$ sobre un cuerpo $K$ (como $\mathbb{R}$ o $\mathbb{C
 Los elementos de $V$ se llaman **vectores** y los de $K$, **escalares**.
 
 !!! note "Nota"
-El **espacio trivial** es aquel que contiene solo el vector neutro (vector cero).
+
+    El **espacio trivial** es aquel que contiene solo el vector neutro (vector cero).
 
 ### :link: Combinación Lineal
 
@@ -56,7 +57,8 @@ Una **base** $B$ es un conjunto que es simultáneamente linealmente independient
 La **dimensión** $\dim(V)$ es el número de vectores en cualquier base de $V$. Todas las bases tienen el mismo tamaño.
 
 !!! tip "✨ Base Canónica"
-En $K^n$, la base canónica es $\{e_1 = (1,0,\dots,0), e_2 = (0,1,\dots,0), \dots\}$.
+    
+    En $K^n$, la base canónica es $\{e_1 = (1,0,\dots,0), e_2 = (0,1,\dots,0), \dots\}$.
 
 ## Ejemplos
 

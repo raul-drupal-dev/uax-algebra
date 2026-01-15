@@ -52,6 +52,7 @@ plugins:
       feedback_incorrect: "Respuesta incorrecta."
       auto_submit: true
       auto_number: true
+      language: es
 markdown_extensions:
   - pymdownx.details
   - pymdownx.arithmatex:

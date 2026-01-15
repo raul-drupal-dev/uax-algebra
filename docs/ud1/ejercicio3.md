@@ -57,6 +57,7 @@ Resultado final: $\mathbf{a}\times\mathbf{b} = (22, -1, 13)$.
 Para comprobar que un vector $\mathbf{c}$ es perpendicular a otro vector $\mathbf{u}$ basta calcular su producto escalar $\mathbf{c}\cdot\mathbf{u}$; si el resultado es 0 entonces son perpendiculares (forman $90^\circ$). En coordenadas:
 
 ???+ example "Formula"
+
     $$
     \mathbf{c}\cdot\mathbf{u}=\sum_{i=1}^n c_i u_i.
     $$
@@ -77,7 +78,8 @@ $$
 
 Como ambos productos escalares son cero, el vector $\mathbf{a}\times\mathbf{b}$ es perpendicular a $\mathbf{a}$ y a $\mathbf{b}$.
 
-???+ Nota
+???+ note "Nota"
+
     El vector cero también da producto escalar cero con cualquier vector, pero en ese caso el ángulo no está definido; aquí el producto vectorial no es el vector cero, así que la condición implica perpendicularidad genuina.
 
 ---
@@ -86,7 +88,7 @@ Como ambos productos escalares son cero, el vector $\mathbf{a}\times\mathbf{b}$ 
 
 La forma más directa de obtener el área del paralelogramo determinado por $\mathbf{a}$ y $\mathbf{b}$ es tomar la norma del producto vectorial:
 
-???+ example Formula
+???+ example "Formula"
 
     $$
         ext{Área} = \|\mathbf{a}\times\mathbf{b}\|.
@@ -112,6 +114,6 @@ $$
 
 Por tanto el área del paralelogramo formado por $\mathbf{a}$ y $\mathbf{b}$ es $\sqrt{654}\approx 25.5779$ unidades cuadradas.
 
-???+ Nota
+???+ note "Nota"
 
     Alternativamente se puede usar $\|\mathbf{a}\|\,\|\mathbf{b}\|\,|\sin\theta|$, donde $\theta$ es el ángulo entre $\mathbf{a}$ y $\mathbf{b}$; ambas expresiones coincidirán.

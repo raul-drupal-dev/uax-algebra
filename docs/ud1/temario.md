@@ -218,9 +218,9 @@ El **módulo (o magnitud)** del vector resultante es igual al área del paralelo
 
 - Ejemplo rápido: si $\mathbf{v}_1=(1,0,2)$, $\mathbf{v}_2=(2,1,3)$ y $\mathbf{v}_3=(3,1,5)$ entonces $\mathbf{v}_3=\mathbf{v}_1+\mathbf{v}_2$, por tanto el conjunto es linealmente dependiente.
 
-???+ Nota
-La dependencia lineal entre características indica redundancia (multicolinealidad) y puede provocar inestabilidad numérica y coeficientes poco interpretables en modelos lineales. En la práctica se detecta con SVD/valores singulares o la matriz de correlación; respuestas habituales son reducción de dimensión (PCA/SVD), regularización (Ridge/Lasso) o eliminación/combinar características redundantes.
+???+ note "Nota"
 
+    La dependencia lineal entre características indica redundancia (multicolinealidad) y puede provocar inestabilidad numérica y coeficientes poco interpretables en modelos lineales. En la práctica se detecta con SVD/valores singulares o la matriz de correlación; respuestas habituales son reducción de dimensión (PCA/SVD), regularización (Ridge/Lasso) o eliminación/combinar características redundantes.
 
 ---
 
@@ -234,7 +234,7 @@ Canales de YouTube:
 Unicoos (David Calle) – Álgebra, funciones, matrices.
 https://www.unicoos.com/asignatura/matematicas
 
- Matemáticas profesor10 – Ejercicios explicados paso a paso.
+Matemáticas profesor10 – Ejercicios explicados paso a paso.
 https://www.youtube.com/profesor10demates
 
 Plan orientativo de repaso (4 semanas):

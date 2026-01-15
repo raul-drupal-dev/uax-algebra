@@ -41,6 +41,7 @@ Antes de aplicar cualquier fórmula, pregúntate en este orden:
 config:
   flowchart:
     htmlLabels: true
+  theme: dark
 ---
 flowchart TD
     A["🎯 Problema de conteo"]

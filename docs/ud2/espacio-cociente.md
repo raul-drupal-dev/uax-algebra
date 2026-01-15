@@ -28,7 +28,8 @@ La **clase** de $\mathbf{v}$ es $\mathbf{v} + U = \{\mathbf{v} + \mathbf{u} \mid
 El **espacio cociente** $V/U$ es el conjunto de clases de equivalencia. Tiene estructura de espacio vectorial con dimensión $\dim(V) - \dim(U)$.
 
 !!! note "Nota"
-La base de $V/U$ se puede obtener de una base del complemento de $U$.
+
+    La base de $V/U$ se puede obtener de una base del complemento de $U$.
 
 ## Ejemplos
 
