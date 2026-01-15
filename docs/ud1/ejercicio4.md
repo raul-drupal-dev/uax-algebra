@@ -94,6 +94,6 @@ $$
 1\cdot(1,2,0) + 1\cdot(-1,1,1) = (1-1,\;2+1,\;0+1) = (0,3,1) = \mathbf{w}.
 $$
 
-???+ Nota
-    Cuando veas un problema así, intenta primero si puedes adivinar escalares sencillos (0,±1,2, etc.) porque a menudo el enunciado permite escoger ejemplos simples para ilustrar el método. Si el problema pide comprobar existencia para un $\mathbf{w}$ dado, sigue el mismo procedimiento pero resolviendo el sistema general; si pide encontrar $\alpha,\beta$ muestra la verificación final (como hemos hecho).
+???+ note "Nota"
 
+    Cuando veas un problema así, intenta primero si puedes adivinar escalares sencillos (0,±1,2, etc.) porque a menudo el enunciado permite escoger ejemplos simples para ilustrar el método. Si el problema pide comprobar existencia para un $\mathbf{w}$ dado, sigue el mismo procedimiento pero resolviendo el sistema general; si pide encontrar $\alpha,\beta$ muestra la verificación final (como hemos hecho).

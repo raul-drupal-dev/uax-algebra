@@ -41,12 +41,11 @@ $$
 \left|\begin{matrix}c_{1}+2c_{2}+3c_{3}\\\ 0+c_{2}+c_{3}\\\ 2c_{1}+3c_{2}+5c_{3}\end{matrix}\right|=\left|\begin{matrix}0\\\ 0\\\ 0\end{matrix}\right|
 $$
 
-Ahora, igualamos las componentes del vector de la izquierda con las del vector de la derecha (el vector nulo). Esto nos da un sistema de ecuaciones lineales: 
+Ahora, igualamos las componentes del vector de la izquierda con las del vector de la derecha (el vector nulo). Esto nos da un sistema de ecuaciones lineales:
 
 - Primera componente: $c_{1}+2c_{2}+3c_{3}=0$
 - Segunda componente: $c_{2}+c_{3}=0$
 - Tercera componente: $2c_{1}+3c_{2}+5c_{3}=0$
-
 
 $$
 M = \left|
@@ -68,7 +67,7 @@ $$
 Evaluando:
 
 $$
-= 1(5-3) -2(0-2) +3(0-2) = 
+= 1(5-3) -2(0-2) +3(0-2) =
 $$
 
 $$
@@ -156,6 +155,6 @@ $$
 \mathbf{v}_3 = \mathbf{v}_1 + \mathbf{v}_2.
 $$
 
-???+ Nota
-    Hemos visto que $\mathbf{v}_3$ es combinación lineal de $\mathbf{v}_1$ y $\mathbf{v}_2$, lo que explica la dependencia lineal. Esto significa que los tres vectores no añaden nueva dirección; el conjunto de direcciones lo generan solo dos vectores independientes.
+???+ note "Nota"
 
+    Hemos visto que $\mathbf{v}_3$ es combinación lineal de $\mathbf{v}_1$ y $\mathbf{v}_2$, lo que explica la dependencia lineal. Esto significa que los tres vectores no añaden nueva dirección; el conjunto de direcciones lo generan solo dos vectores independientes.

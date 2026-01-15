@@ -97,9 +97,9 @@ Si se quiere normalizar (vector unitario):
 
 $$\displaystyle \hat{\mathbf{n}}=\frac{1}{\sqrt{14}}(-1,-2,3).$$
 
-!!! caution "Nota de estudio" 
+!!! caution "Nota de estudio"
 
-    - El signo del vector normal depende del orden de los vectores en el producto cruzado: $\overrightarrow{AB}\times\overrightarrow{AC}$ y $\overrightarrow{AC}\times\overrightarrow{AB}$ son opuestos.
+    El signo del vector normal depende del orden de los vectores en el producto cruzado: $\overrightarrow{AB}\times\overrightarrow{AC}$ y $\overrightarrow{AC}\times\overrightarrow{AB}$ son opuestos.
 
 ---
 
@@ -107,7 +107,7 @@ $$\displaystyle \hat{\mathbf{n}}=\frac{1}{\sqrt{14}}(-1,-2,3).$$
 
 |              Cantidad |       Resultado        | Forma utilizada                                                                       |
 | --------------------: | :--------------------: | :------------------------------------------------------------------------------------ |
-| $\overrightarrow{AB}$ |       $(1,1,1)$        | $(x_B-x_A,\;y_B-y_A,\;z_B-z_A)$                        |
-| $\overrightarrow{AC}$ |       $(-1,2,1)$       | $(x_B-x_A,\;y_B-y_A,\;z_B-z_A)$                                                             |
+| $\overrightarrow{AB}$ |       $(1,1,1)$        | $(x_B-x_A,\;y_B-y_A,\;z_B-z_A)$                                                       |
+| $\overrightarrow{AC}$ |       $(-1,2,1)$       | $(x_B-x_A,\;y_B-y_A,\;z_B-z_A)$                                                       |
 |  Área $\triangle ABC$ | $\dfrac{\sqrt{14}}{2}$ | $\tfrac{1}{2}\,\|\overrightarrow{AB}\times\overrightarrow{AC}\|$ (producto vectorial) |
 |         Vector normal |      $(-1,-2,3)$       | Producto vectorial $\overrightarrow{AB}\times\overrightarrow{AC}$ (normal al plano)   |

@@ -1,183 +1,381 @@
-Basado en la documentación proporcionada para la **Unidad Didáctica 5: Teoría de grafos**, he extraído los conceptos, fórmulas y algoritmos fundamentales para que puedas generar tu material de estudio.
+# Resumen Visual — UD5: Teoría de Grafos
 
-Este listado sigue la progresión lógica de la unidad, desde la definición básica hasta la aplicación de algoritmos complejos.
+## 🎯 Objetivo de la Unidad
 
-***
-
-## Temario: Teoría de Grafos y Algoritmos
-
-### 1. Definiciones Básicas y Tipos de Grafos
-*   **Grafo $G = (V, E)$**: Definición como terna o par de conjuntos (vértices y aristas).
-*   **Vértices (nodos) y Aristas (lados)**: Elementos que componen el grafo y su relación de adyacencia.
-*   **Grafo Simple**: Grafo que no tiene bucles (aristas que unen un vértice consigo mismo).
-*   **Multigrafo**: Grafo con más de una arista entre dos vértices.
-*   **Grafo Dirigido (Dígrafo)**: Las aristas (arcos o ramas) tienen una orientación definida (punto de partida y llegada).
-*   **Orden de un grafo**: Número total de vértices, denotado por $ord(G)$ o $|V|$.
-*   **Grafo Completo ($K_n$)**: Grafo donde cada par de vértices distintos tiene una arista que los une.
-*   **Grafo Bipartito ($K_{n,m}$)**: Vértices divididos en dos conjuntos donde solo hay aristas entre vértices de conjuntos distintos.
-
-### 2. Grados y Representación Matricial
-*   **Grado de un vértice $\delta(v)$**: Número de aristas incidentes en un vértice.
-*   **Teorema Fundamental (Lema del saludo)**: La suma de los grados de todos los vértices es igual a dos veces el número de aristas ($\sum \delta(v) = 2|E|$).
-*   **Grados en grafos dirigidos**:
-    *   **Grado de salida ($\delta^+(v)$)**: Arcos que inician en el vértice.
-    *   **Grado de entrada ($\delta^-(v)$)**: Arcos que terminan en el vértice.
-    *   **Vértice Fuente**: Cuando $\delta^-(v) = 0$.
-    *   **Vértice Sumidero**: Cuando $\delta^+(v) = 0$.
-*   **Matriz de Adyacencia ($A$)**: Representación binaria (1 y 0) de las conexiones.
-    *   *Indicación:* Mencionar que es simétrica para grafos no dirigidos y que la suma de filas/columnas da los grados.
-
-### 3. Conexión, Isomorfía y Operaciones
-*   **Subgrafo y Subgrafo Inducido**: Subconjuntos de vértices y aristas que forman un nuevo grafo.
-*   **Grafo Complementario**: Grafo con los mismos vértices pero con las aristas que le faltan al original para ser completo.
-*   **Isomorfismo de grafos**: Definición de biyección entre vértices que preserva las conexiones.
-    *   *Indicación:* Listar condiciones necesarias: mismo número de vértices, aristas y mismos grados.
-
-### 4. Caminos, Ciclos y Grafos Especiales
-*   **Conceptos de recorrido**:
-    *   **Cadena/Camino**: Sucesión finita alterna de vértices y aristas.
-    *   **Longitud**: Número de aristas que componen el camino.
-    *   **Camino Simple**: No repite ningún vértice.
-    *   **Circuito**: Camino cerrado que no repite aristas.
-    *   **Ciclo**: Circuito que no repite vértices (excepto el inicial y final).
-*   **Conexión**:
-    *   **Componente conexa**: Subgrafo máximo donde todos los vértices están conectados.
-    *   **Fuertemente conexo (en dígrafos)**: Existe camino de ida y vuelta entre cualquier par de vértices.
-*   **Grafos Eulerianos**:
-    *   **Camino Euleriano**: Pasa por todas las aristas una sola vez.
-    *   **Teorema de Euler**: Relación con la paridad de los grados de los vértices (todos pares para ciclo, máximo dos impares para camino abierto).
-*   **Grafos Hamiltonianos**:
-    *   **Ciclo Hamiltoniano**: Pasa por todos los vértices una sola vez.
-    *   **Teoremas de Dirac y Ore**: Condiciones suficientes basadas en los grados de los vértices ($d \ge n/2$ o suma de grados de no adyacentes $\ge n$).
-    *   **Clausura de un grafo**: Grafo obtenido uniendo vértices no adyacentes cuya suma de grados es $\ge n$.
-
-### 5. Árboles
-*   **Definición de Árbol**: Grafo simple, conexo y acíclico.
-*   **Propiedades de los árboles**: $|V| = |E| + 1$ y existencia de un único camino simple entre cualquier par de vértices.
-*   **Árbol Enraizado (Arborescencia)**:
-    *   **Terminología**: Raíz, nivel, padre, hijo, ascendientes, descendientes, hoja (vértice sin hijos) y vértices internos.
-*   **Árbol de Expansión (Generador)**: Árbol contenido en un grafo que incluye todos sus vértices.
-*   **Algoritmos de búsqueda**:
-    *   **Búsqueda en profundidad (DFS)**: Uso de pilas (LIFO) para explorar.
-    *   **Búsqueda en anchura (BFS)**: Uso de colas/pilas para explorar niveles.
-
-### 6. Redes y Algoritmos de Optimización
-*   **Red**: Grafo ponderado con pesos (costes, distancias, tiempos) asociados a las aristas.
-*   **Matriz de Costes ($C$)**: Matriz que indica los pesos entre vértices (uso de $\infty$ para no conexión).
-*   **Árbol Generador de Mínimo Coste (MST)**: Árbol de expansión cuya suma de pesos es mínima.
-*   **Algoritmo de Prim**: Construye el MST añadiendo el vértice más cercano al conjunto ya conectado.
-*   **Algoritmo de Kruskal**: Construye el MST añadiendo las aristas de menor peso que no formen ciclos.
-*   **Algoritmo de Dijkstra**: Determina el camino mínimo desde un origen a todos los demás vértices en redes con pesos no negativos.
-
-***
-
-### Indicaciones relevantes para la generación de documentación:
-
-1.  **Representación Visual**: Es vital mencionar la importancia de los diagramas de puntos (vértices) y líneas/flechas (aristas/arcos) para entender conceptos como el isomorfismo o los ciclos.
-2.  **Paridad de Euler**: Para la IA, recalca que el Teorema de Euler es la clave para resolver problemas clásicos como los "Puentes de Königsberg".
-3.  **Diferencia Euler vs Hamilton**: Es el error más común; mientras Euler se centra en recorrer todas las **aristas**, Hamilton se centra en visitar todos los **vértices**.
-4.  **Algoritmos Voraces (Greedy)**: Kruskal, Prim y Dijkstra pertenecen a esta familia; entender que eligen la opción "óptima local" en cada paso es fundamental para comprender su lógica.
-5.  **Matrices**: La IA debe ser capaz de explicar cómo convertir un grafo visual a matriz de adyacencia/costes y viceversa, ya que es el puente entre la geometría y el cálculo computacional.
-
+Comprender los conceptos fundamentales de la teoría de grafos, sus representaciones, propiedades y algoritmos principales (recorridos, caminos especiales y optimización en redes).
 
 ---
 
-Aquí tienes una recapitulación de los ejemplos proporcionados en los documentos de la **Unidad Didáctica 5: Teoría de grafos**, organizados por temas y con el desarrollo paso a paso de los procesos algorítmicos.
+## 📊 Mapa Conceptual
+
+```mermaid
+graph LR
+    A[Grafos] --> B[Definiciones Básicas]
+    A --> C[Representación]
+    A --> D[Propiedades]
+    A --> E[Caminos Especiales]
+    A --> F[Algoritmos]
+
+    B --> B1[Vértices y Aristas]
+    B --> B2[Tipos: Dirigido/No dirigido]
+    B --> B3[Completo, Bipartito]
+
+    C --> C1[Matriz de Adyacencia]
+    C --> C2[Lista de Adyacencia]
+
+    D --> D1[Grados]
+    D --> D2[Conexión]
+    D --> D3[Árboles]
+
+    E --> E1[Eulerianos]
+    E --> E2[Hamiltonianos]
+
+    F --> F1[DFS / BFS]
+    F --> F2[Kruskal / Prim]
+    F --> F3[Dijkstra]
+```
 
 ---
 
-### 1. Definiciones Básicas y Representación
+## 📐 Conceptos Fundamentales
 
-**Ejemplo 1.1: Grafo Simple**
-*   **Enunciado:** Considerar $G = (V, E)$ con $V = \{a, b, c, d, e\}$ y $E = \{ab, ac, bc, cd, da, de\}$.
-*   **Respuesta:** El grafo se representa uniendo los pares de vértices indicados. Es un **grafo simple** porque no tiene bucles (aristas de un vértice a sí mismo).
+### Grafo
 
-**Ejemplo 1.4: Grados en Grafos Dirigidos**
-*   **Enunciado:** Calcular grados de entrada ($\delta^-$) y salida ($\delta^+$) del digrafo con $E = \{ab, ac, ad, bc, dc, ea, ed\}$.
-*   **Paso a paso:**
-    1.  Contar flechas que salen de cada nodo: $\delta^+(a)=3, \delta^+(b)=1, \delta^+(c)=0, \delta^+(d)=1, \delta^+(e)=2$.
-    2.  Contar flechas que entran a cada nodo: $\delta^-(a)=1, \delta^-(b)=1, \delta^-(c)=3, \delta^-(d)=2, \delta^-(e)=0$.
-*   **Conclusión:** El vértice $c$ es un **sumidero** ($\delta^+=0$) y el vértice $e$ es una **fuente** ($\delta^-=0$).
+Un grafo $G = (V, E)$ consta de:
 
-**Ejemplo 1.7: Isomorfismo de Grafos**
-*   **Enunciado:** Determinar si dos grafos de 5 vértices son isomorfos.
-*   **Análisis paso a paso:**
-    1.  Verificar número de vértices: Ambos tienen 5.
-    2.  Verificar grados: En ambos, cuatro vértices tienen grado 3 y uno tiene grado 4.
-    3.  Establecer la biyección: El vértice de grado 4 en el primero ($e$) debe corresponder al de grado 4 en el segundo (vértice 4).
-*   **Conclusión:** Son isomorfos; gráficamente representan mover los vértices en el espacio manteniendo las conexiones.
+- $V$: conjunto de **vértices** (nodos)
+- $E$: conjunto de **aristas** (lados, edges)
+
+**Tipos principales:**
+
+| Tipo                    | Característica                          | Ejemplo                                 |
+| ----------------------- | --------------------------------------- | --------------------------------------- |
+| **Simple**              | Sin bucles ni aristas múltiples         | Grafo social                            |
+| **Dirigido** (Dígrafo)  | Aristas con dirección                   | Red de calles                           |
+| **Completo** $K_n$      | Todos conectados entre sí               | $K_5$ tiene $\binom{5}{2} = 10$ aristas |
+| **Bipartito** $K_{n,m}$ | Dos conjuntos, aristas solo entre ellos | Empleados-Proyectos                     |
 
 ---
 
-### 2. Caminos y Conexión
+## 🔢 Grados y Lema del Saludo
 
-**Ejemplo 2.1: Circuito vs. Ciclo**
-*   **Diferencia:** Un **circuito** es un camino cerrado que no repite aristas (pero puede repetir vértices). Un **ciclo** es un circuito que no repite ningún vértice excepto el inicial y el final.
+### Definición de Grado
 
-**Ejemplo 2.2: Conexión Fuerte en Dígrafos**
-*   **Caso Conexo:** Existe un camino de ida y vuelta entre cualquier par de vértices.
-*   **Caso No Conexo:** Si existe camino de $a \to b$ pero no de $b \to a$, el digrafo no es fuertemente conexo.
+- **Grado** $\delta(v)$: número de aristas incidentes en vértice $v$
 
----
+### Lema del Saludo (Teorema Fundamental)
 
-### 3. Grafos Especiales (Eulerianos y Hamiltonianos)
+$$
+\sum_{v \in V} \delta(v) = 2|E|
+$$
 
-**Ejemplo: Puentes de Königsberg**
-*   **Problema:** ¿Se pueden recorrer los 7 puentes pasando una sola vez por cada uno?
-*   **Resolución según Teorema de Euler:**
-    1.  Modelar las regiones como vértices y los puentes como aristas.
-    2.  Calcular grados: Si hay más de dos vértices de grado impar, no existe camino euleriano.
-*   **Conclusión:** Como hay vértices de grado impar, **no es euleriano**.
+**Interpretación:** La suma de todos los grados es el doble del número de aristas (cada arista se cuenta dos veces).
 
-**Ejemplo: Teorema de Dirac (Hamiltonianos)**
-*   **Enunciado:** ¿Es $G$ con 6 vértices y grado mínimo $\delta=3$ hamiltoniano?
-*   **Paso a paso:** Aplicar condición $\delta \ge n/2$.
-    *   $3 \ge 6/2 \to 3 \ge 3$.
-*   **Conclusión:** Se cumple la condición suficiente, el grafo es **hamiltoniano**.
+!!! tip "✨ Consecuencia"
 
----
+    Siempre hay un **número par de vértices con grado impar**.
 
-### 4. Algoritmos de Árboles de Expansión
+### Grafos Dirigidos
 
-**Ejemplo 2.7: Búsqueda en Profundidad (DFS)**
-*   **Objetivo:** Hallar un árbol de expansión para un grafo de vértices $\{a, b, c, d, e, f, g, h, i\}$.
-*   **Proceso Paso a Paso (uso de pila $P$):**
-    1.  **Paso 0:** $P=(a)$, $V'=\{a\}$.
-    2.  **Paso 1:** Elegir adyacente a $a \to b$. $P=(b, a)$, $E'=\{ab\}$.
-    3.  **Paso 2:** Elegir adyacente a $b \to e$. $P=(e, b, a)$, $E'=\{ab, be\}$.
-    4.  **Paso 3:** $e$ no tiene adyacentes nuevos. Retroceder (extraer $e$): $P=(b, a)$.
-    5.  **Paso 4:** Elegir otro adyacente a $b \to f$. $P=(f, b, a)$, $E'=\{ab, be, bf\}$.
-    6.  **Pasos finales:** Continuar hasta que $V' = V$. El árbol resultante en este ejemplo incluye las aristas $\{ab, be, bf, ac, cg, gh, hd, di\}$.
+- **Grado de salida** $\delta^+(v)$: aristas que salen
+- **Grado de entrada** $\delta^-(v)$: aristas que entran
+- **Fuente**: $\delta^-(v) = 0$
+- **Sumidero**: $\delta^+(v) = 0$
 
 ---
 
-### 5. Algoritmos de Optimización en Redes
+## 📊 Representación: Matriz de Adyacencia
 
-**Ejemplo 3.1: Árbol Generador Mínimo (Prim vs. Kruskal)**
-*   **Red:** Vértices $a$ al $f$ con diversos pesos.
-*   **Solución Kruskal (Aristas):**
-    1.  Ordenar aristas por peso: $bc(3), ce(4), ac(5), bd(6), cf(7) \dots$
-    2.  Añadir $bc$ (coste 3).
-    3.  Añadir $ce$ (coste 4). No forma ciclo.
-    4.  Añadir $ac$ (coste 5). No forma ciclo.
-    5.  Añadir $bd$ (coste 6). No forma ciclo.
-    6.  Añadir $cf$ (coste 7). No forma ciclo.
-*   **Resultado:** Coste total = $3+4+5+6+7 = \mathbf{25}$.
+Para grafo con $n$ vértices, matriz $A$ de $n \times n$:
 
-**Ejemplo 3.3: Algoritmo de Dijkstra (Camino Mínimo)**
-*   **Objetivo:** Camino mínimo desde el vértice $a$ a todos los demás en una red ponderada.
-*   **Proceso paso a paso:**
-    1.  **Paso 0:** Distancias $D_0 = (a:0, b:\infty, c:\infty, d:\infty, e:\infty, f:\infty)$.
-    2.  **Paso 1:** Desde $a$, actualizar vecinos $b$ y $c$. $D_1 = (a:0, b:2, c:4, d:\infty, e:\infty, f:\infty)$.
-    3.  **Paso 2:** El mínimo es $b(2)$. Actualizar vecinos de $b$ ($d, e, f$). $D_2(d) = \min(\infty, 2+3)=5$. $D_2 = (a:0, b:2, c:4, d:5, e:11, f:10)$.
-    4.  **Pasos finales:** Se sigue eligiendo el nodo con distancia mínima acumulada hasta cerrar todos los nodos.
-*   **Resultados finales:**
-    *   Camino a $d$: $a, b, d$ (Distancia: 5).
-    *   Camino a $f$: $a, b, d, e, f$ (Distancia: 8).
+$$
+A[i,j] = \begin{cases}
+1 & \text{si existe arista de } v_i \text{ a } v_j \\
+0 & \text{en caso contrario}
+\end{cases}
+$$
+
+**Propiedades:**
+
+- Grafo no dirigido: $A$ es **simétrica** ($A^T = A$)
+- Suma de fila $i$ = $\delta^+(v_i)$ (grado salida)
+- Suma de columna $j$ = $\delta^-(v_j)$ (grado entrada)
 
 ---
 
-### Resumen de Fórmulas y Teoremas Aplicados
-*   **Lema del saludo:** $\sum \delta(v) = 2|E|$.
-*   **Propiedad de Árboles:** $|V| = |E| + 1$.
-*   **Fórmula de Binet (Fibonacci vía Grafos):** $F_{n+1} = \frac{1}{\sqrt{5}} \left(\frac{1 + \sqrt{5}}{2}\right)^{n+1} - \frac{1}{\sqrt{5}} \left(\frac{1 - \sqrt{5}}{2}\right)^{n+1}$.
+## 🌳 Árboles
+
+### Definición
+
+Un **árbol** es un grafo:
+
+1. Simple
+2. Conexo
+3. Acíclico (sin ciclos)
+
+**Propiedad fundamental:**
+
+$$
+|V| = |E| + 1
+$$
+
+Para $n$ vértices, un árbol tiene exactamente $n-1$ aristas.
+
+### Árbol Enraizado (Arborescencia)
+
+- **Raíz**: vértice designado como inicio
+- **Nivel**: distancia desde la raíz
+- **Hoja**: vértice sin hijos
+- **Padre/Hijo**: relación de adyacencia
+
+---
+
+## 🔄 Algoritmos de Recorrido
+
+```mermaid
+graph LR
+    A[Búsqueda] --> B[DFS<br/>Profundidad]
+    A --> C[BFS<br/>Anchura]
+
+    B --> B1[Usa Pila LIFO]
+    B --> B2[Explora rama completa]
+
+    C --> C1[Usa Cola FIFO]
+    C --> C2[Explora por niveles]
+
+    style B fill:#e1f5ff
+    style C fill:#ffe1f5
+```
+
+### DFS (Depth-First Search)
+
+**Estructura:** Pila (LIFO - Last In, First Out)
+
+**Cuándo usar:**
+
+- Detectar ciclos
+- Topological sort
+- Explorar todas las posibilidades
+
+### BFS (Breadth-First Search)
+
+**Estructura:** Cola (FIFO - First In, First Out)
+
+**Cuándo usar:**
+
+- Camino más corto (sin pesos)
+- Explorar por niveles
+- Vecinos más cercanos
+
+---
+
+## 🚶 Caminos y Ciclos
+
+### Definiciones
+
+| Concepto          | Definición                     | Repetición             |
+| ----------------- | ------------------------------ | ---------------------- |
+| **Cadena/Camino** | Sucesión de vértices y aristas | Puede repetir          |
+| **Camino simple** | Camino sin repetir vértices    | No repite vértices     |
+| **Circuito**      | Camino cerrado                 | Puede repetir vértices |
+| **Ciclo**         | Circuito sin repetir vértices  | Solo inicial=final     |
+
+### Conexión
+
+- **Grafo conexo**: Existe camino entre cualquier par de vértices
+- **Componente conexa**: Subgrafo máximo conexo
+- **Fuertemente conexo** (dígrafos): Camino de ida y vuelta entre todo par
+
+---
+
+## 🔄 Caminos Eulerianos
+
+> **Pregunta:** ¿Se puede recorrer un grafo pasando por **todas las aristas** exactamente una vez?
+
+### Teorema de Euler
+
+| Condición                                      | Resultado                                           |
+| ---------------------------------------------- | --------------------------------------------------- |
+| **Todos** los vértices tienen grado **par**    | Existe **ciclo euleriano** (cerrado)                |
+| Exactamente **2** vértices con grado **impar** | Existe **camino euleriano** (abierto, entre esos 2) |
+| Más de 2 con grado impar                       | **No** existe camino euleriano                      |
+
+!!! tip "✨ Regla mental"
+
+    Euler se preocupa por las **aristas** (todas deben usarse una vez).
+
+---
+
+## 🎯 Caminos Hamiltonianos
+
+> **Pregunta:** ¿Se puede recorrer un grafo pasando por **todos los vértices** exactamente una vez?
+
+### Criterios Suficientes
+
+**Teorema de Dirac:**
+Si $\delta(v) \geq n/2$ para **todo** vértice, entonces existe **ciclo hamiltoniano**.
+
+**Teorema de Ore:**
+Si $\delta(u) + \delta(v) \geq n$ para todo par de vértices **no adyacentes**, entonces existe ciclo hamiltoniano.
+
+!!! warning "⚠️ Importante"
+
+    No hay criterio necesario y suficiente sencillo. Estos teoremas garantizan existencia, pero su fallo no garantiza inexistencia.
+
+!!! tip "✨ Regla mental"
+
+    Hamilton se preocupa por los **vértices** (todos deben visitarse una vez).
+
+---
+
+## 🔄 Diferencia Euler vs Hamilton
+
+```mermaid
+graph LR
+    A{¿Qué recorrer?} --> B[Todas las ARISTAS]
+    A --> C[Todos los VÉRTICES]
+
+    B --> B1[Euleriano<br/>Criterio: paridad grados]
+    C --> C1[Hamiltoniano<br/>Difícil detectar]
+
+    style B1 fill:#e1f5ff
+    style C1 fill:#fff5e1
+```
+
+---
+
+## 🕸️ Redes y Algoritmos de Optimización
+
+### Red
+
+**Grafo ponderado**: Cada arista tiene un **peso** (coste, distancia, tiempo).
+
+**Representación:** Matriz de costes $C$ donde $C[i,j] = \infty$ si no hay arista.
+
+---
+
+## 🌲 Árbol Generador de Mínimo Coste (MST)
+
+> **Objetivo:** Conectar todos los vértices con la **mínima suma de pesos**.
+
+### Algoritmo de Kruskal
+
+**Estrategia:** Ordenar aristas por peso y añadir de menor a mayor, **evitando ciclos**.
+
+**Pasos:**
+
+1. Ordenar aristas por peso creciente
+2. Inicializar bosque vacío
+3. Para cada arista (menor a mayor):
+   - Si NO forma ciclo → añadir
+   - Si forma ciclo → descartar
+4. Terminar cuando se tengan $n-1$ aristas
+
+### Algoritmo de Prim
+
+**Estrategia:** Crecer el árbol desde un vértice inicial, añadiendo siempre la arista de **menor peso** que conecta al árbol.
+
+**Pasos:**
+
+1. Comenzar desde vértice arbitrario
+2. En cada paso: añadir arista de menor peso que una un vértice del árbol con uno fuera
+3. Terminar cuando todos los vértices estén en el árbol
+
+---
+
+## 🛣️ Algoritmo de Dijkstra (Camino Mínimo)
+
+> **Objetivo:** Encontrar el camino de **mínimo coste** desde un origen a todos los demás vértices.
+
+**Restricción:** Funciona solo con **pesos no negativos**.
+
+**Pasos:**
+
+1. Inicializar distancia del origen = 0, resto = $\infty$
+2. Marcar todos como no visitados
+3. Mientras haya no visitados:
+   - Elegir vértice no visitado con **menor distancia**
+   - Para cada vecino:
+     - Calcular distancia alternativa (actual + peso arista)
+     - Si es menor → actualizar
+   - Marcar vértice como visitado
+4. Al final: tabla con distancias mínimas y predecesores
+
+!!! warning "❗ Limitación"
+
+    Dijkstra **no funciona con pesos negativos**. Para esos casos usar Bellman-Ford.
+
+---
+
+## ✅ Checklist de Ejercicios
+
+### Para identificar tipo de grafo:
+
+- [ ] ¿Tiene bucles? → No es simple
+- [ ] ¿Las aristas tienen dirección? → Es dirigido
+- [ ] ¿Todos los pares conectados? → Es completo $K_n$
+- [ ] ¿Se divide en dos conjuntos? → Es bipartito
+
+### Para camino euleriano:
+
+- [ ] ¿He contado el grado de cada vértice?
+- [ ] ¿Todos tienen grado par? → Ciclo euleriano
+- [ ] ¿Exactamente 2 impares? → Camino euleriano
+- [ ] ¿Más de 2 impares? → No existe
+
+### Para camino hamiltoniano:
+
+- [ ] ¿He verificado teorema de Dirac? ($\delta(v) \geq n/2$)
+- [ ] ¿He verificado teorema de Ore? (suma grados no adyacentes)
+- [ ] Si ambos fallan, ¿he intentado construcción directa?
+
+### Para MST (Kruskal/Prim):
+
+- [ ] ¿He ordenado aristas por peso? (Kruskal)
+- [ ] ¿He verificado que no se forman ciclos?
+- [ ] ¿El árbol tiene $n-1$ aristas?
+- [ ] ¿He calculado el coste total?
+
+### Para Dijkstra:
+
+- [ ] ¿He inicializado distancias correctamente?
+- [ ] ¿He actualizado distancias en cada iteración?
+- [ ] ¿He marcado vértices visitados?
+- [ ] ¿He reconstruido el camino usando predecesores?
+
+---
+
+## 💡 Errores Comunes
+
+!!! warning "⚠️ Cuidado con estos errores"
+
+    - **Confundir Euler y Hamilton**: Euler = aristas, Hamilton = vértices
+    - **Lema del saludo mal aplicado**: Es $2|E|$, no $|E|$
+    - **Matriz de adyacencia**: En grafos no dirigidos debe ser simétrica
+    - **Árboles**: Siempre $|V| = |E| + 1$, verificar esto
+    - **Dijkstra con pesos negativos**: No funciona, usar Bellman-Ford
+    - **Kruskal sin ordenar**: Las aristas deben procesarse de menor a mayor peso
+
+---
+
+## 📝 Tabla Resumen de Algoritmos
+
+| Algoritmo    | Objetivo                     | Complejidad              | Restricciones |
+| ------------ | ---------------------------- | ------------------------ | ------------- |
+| **DFS**      | Recorrer grafo (profundidad) | $O(V + E)$               | -             |
+| **BFS**      | Recorrer grafo (anchura)     | $O(V + E)$               | -             |
+| **Kruskal**  | MST                          | $O(E \log E)$            | -             |
+| **Prim**     | MST                          | $O(E \log V)$            | -             |
+| **Dijkstra** | Camino mínimo                | $O(V^2)$ o $O(E \log V)$ | Pesos ≥ 0     |
+
+---
+
+## 🔗 Enlaces Relacionados
+
+- [Ejercicios Resueltos UD5](ejercicios-resueltos.md)
+- [Ejercicios Propuestos UD5](ejercicios-propuestos.md)
+- [Definiciones](definiciones.md)
+- [Árboles DFS/BFS](arboles-dfs-bfs.md)
+- [Euler y Hamilton](euler-hamilton.md)
+- [Redes MST Dijkstra](redes-mst-dijkstra.md)
+- [UD6: Combinatoria](../ud6/index.md)
