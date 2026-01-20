@@ -1,0 +1,20 @@
+.md-tabs__list {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    background-color: #4051B5; /* Color del header */
+    padding-bottom: 4px;       /* Espacio para que el scroll no tape el texto */
+    
+    /* Configuración de scroll para Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;    /* scrollbar-width: none; */
+}
+
+.md-tabs__list::-webkit-scrollbar {
+    display: none;             /* Para Chrome, Safari y Edge */
+}
+
+.md-tabs__item {
+    flex: 0 0 auto;            /* Evita que los ítems se encojan para caber */
+}
